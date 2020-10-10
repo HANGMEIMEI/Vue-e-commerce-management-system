@@ -401,6 +401,75 @@ npm uninstall -g @vue/cli
 
 
 
+第五步：在控制台中输入
+
+![1602328003652](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602328003652.png)
+
+然后再次在控制台中输入：
+
+ git push vue_shop master
+
+就可以把项目上传到github上面了!
+
+
+
+第六步：成功：
+
+![1602328106071](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602328106071.png)
+
+
+
+
+
+### 2.2 后台项目的环境安装配置：
+
+#### 1 安装Mysql 数据库
+
+​	用PHPstudy这个软件来使用MySQL数据库，因为它集成了MySQL和Apache服务器！而我们只需要用到MySQL，所以我们可以停掉Apache！
+
+![1602329251697](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602329251697.png)
+
+
+
+接下来需要导入数据库进行测试：
+
+![1602329575524](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602329575524.png)
+
+这个数据库文件可以自己写！
+
+或者用MySQL软件来写！
+
+
+
+用PHPstudy来执行这个脚本！：
+
+![1602329945614](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602329945614.png)
+
+
+
+查看数据库文件是否还原成功：
+
+![1602330115154](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602330115154.png)
+
+
+
+
+
+
+
+#### 2 安装Node.js 环境
+
+
+
+以后再讲！
+
+
+
+#### 3 配置项目相关信息
+
+#### 4 启动项目
+
+#### 5 使用postman 测试后台项目接口是否正常
 
 
 
@@ -409,39 +478,24 @@ npm uninstall -g @vue/cli
 
 
 
-## 后台项目的环境安装配置：
 
-### 1 安装Mysql 数据库
+## ◆登录/退出功能
 
-### 2 安装Node.js 环境
+## ◆主页布局
 
-### 3 配置项目相关信息
+## ◆用户管理模块
 
-### 4 启动项目
+## ◆权限管理模块
 
-### 5 使用postman 测试后台项目接口是否正常
+## ◆分类管理模块
 
+## ◆参数管理模块
 
+## ◆商品管理模块
 
+## ◆订单管理模块
 
-
-#### ◆登录/退出功能
-
-#### ◆主页布局
-
-#### ◆用户管理模块
-
-#### ◆权限管理模块
-
-#### ◆分类管理模块
-
-#### ◆参数管理模块
-
-#### ◆商品管理模块
-
-#### ◆订单管理模块
-
-#### ◆数据统计模块
+## ◆数据统计模块
 
 
 
