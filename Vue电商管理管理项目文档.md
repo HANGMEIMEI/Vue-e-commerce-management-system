@@ -621,6 +621,122 @@ token是用来进行登陆状态保存的！就相当于node里面的session！
 
 
 
+#### 3 创建登录组件
+
+​	第一步：
+
+、在component文件夹下创建login.vue的组件
+
+```vue
+// 这是一个单文件组件 由三部分组成
+
+// 1 结构
+// 2 样式
+// 3 行为
+<template>
+    <div>
+        登录组件
+    </div>
+</template>
+
+<script>
+    export default {
+
+    }
+</script>
+
+<style lang="less" scoped>
+    // lang="less" 表示这个节点中支持less语法格式
+    // scoped 是一个vue的指令 是用来控制组件的样式的生效的区间！
+    // 只要是一个单文件组件 我们样式都推荐加上scoped属性！因为不会影响到其他的组件！从而防止组件之间的样式冲突！
+
+
+</style>
+```
+
+
+
+#### 4 把登录组件渲染到根组件中！
+
+Login.vue 组件创建好了之后，我们需要通过路由的形式渲染到APP根组件中：
+
+我这个版本路由的名称在router文件夹下的index'.js，另一些版本就是router文件夹下的router.js,这个没有影响！
+
+
+
+```js
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+// 导入登录组件
+import Login from '../components/Login.vue'
+
+Vue.use(VueRouter)
+
+// 路由规则是由path来指定咱们路径 当用户访问/login的时候我们通过component这个属性指定要展示的组件
+const routes = [
+  {
+    path: '/login',
+    component: Login
+  }
+]
+
+const router = new VueRouter({
+  routes
+})
+
+export default router
+
+```
+
+
+
+​	
+
+最后在根组件中加入路由占位符：
+
+```vue
+<template>
+  <div id="app">
+  <!-- 路由占位符 -->
+  <router-view></router-view>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "app"
+};
+</script>
+
+<style>
+</style>
+vue
+
+```
+
+![1602395920554](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602395920554.png)
+
+最后在地址中加入login即可看到上图所示的内容！
+
+
+
+#### 5 添加路由重定向的规则
+
+
+
+要在路由的规则中加入下面的代码：
+
+```js
+const routes = [
+  { path: '/', redirect: '/login' },
+  { path: '/login', component: Login }
+]
+```
+
+
+
+
+
 
 
 
