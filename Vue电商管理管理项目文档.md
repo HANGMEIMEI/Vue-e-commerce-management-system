@@ -583,7 +583,29 @@ token是用来进行登陆状态保存的！就相当于node里面的session！
 
 
 
+### 3.3 登录功能的实现
 
+#### 1 登录页面的布局
+
+##### 通过Element-UI组件实现布局（下面是会用到的组件）
+
+·el-form  表单组件
+·el-form-item    表单的item项 【输入框、登录和重置】
+·el-input
+·el-button
+·字体图标
+
+
+
+
+
+创建login分支：之后在合并到develop上
+
+
+
+```
+ git checkout -b login
+```
 
 
 
