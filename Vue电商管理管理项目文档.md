@@ -609,6 +609,20 @@ token是用来进行登陆状态保存的！就相当于node里面的session！
 
 
 
+#### 2 删除不必要的组件
+
+​	![1602390122780](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602390122780.png)
+
+
+
+由于我这个版本是2.x的版本，所以和3.x的结构有所不同，但是是大同小异的，总之，用的上的就留下，前端页面肯定是要清空的
+
+​	然后view文件夹也要删除， component组件文件也要删除！
+
+
+
+
+
 
 
 ## ◆主页布局
