@@ -503,9 +503,15 @@ npm uninstall -g @vue/cli
 
 
 
+使用postman请求登录的接口：
+
+![1602348479109](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602348479109.png)
 
 
 
+token是用来进行登陆状态保存的！就相当于node里面的session！
+
+我们可以通过token来验证这个人有没有登录！
 
 
 
