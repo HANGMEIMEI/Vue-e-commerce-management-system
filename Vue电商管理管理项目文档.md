@@ -906,6 +906,89 @@ export default {}
 
 
 
+##### 绘制登录组件的表单区域
+
+##### <https://element.eleme.cn/#/zh-CN/component/form>
+
+
+
+![1602504555340](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602504555340.png)
+
+
+
+第二步：不复制下来的代码粘贴到组件结构中！
+
+![1602506716905](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602506716905.png)
+
+
+
+第三步： 导入所需插件
+
+![1602507088798](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602507088798.png)
+
+
+
+搞定！：
+
+![1602507129053](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602507129053.png)
+
+
+
+
+
+登陆表单的结构:
+
+```html
+ <!-- 登录表单区域 开始 -->
+      <el-form label-width="0px" class="login_form">
+        <!-- 用户名： -->
+        <el-form-item>
+          <el-input></el-input>
+        </el-form-item>
+        <!-- 密码 -->
+        <el-form-item>
+          <el-input></el-input>
+        </el-form-item>
+        <!-- 按钮区域 -->
+        <el-form-item class="btns">
+          <el-button type="primary">登录</el-button>
+          <el-button type="info">重置</el-button>
+        </el-form-item>
+      </el-form>
+      <!-- 登录表单区域 结束 -->
+```
+
+
+
+登录表单的样式：
+
+```css
+// 登陆表单的样式 开始
+.login_form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 20px;
+//   由于EUI里的输入框默认是标准盒子， 所以会撑大我们的盒子，所以得把盒子转换成CSS3 的盒子
+    box-sizing: border-box;
+}
+
+.btns {
+  display: flex;
+  // flex-end：弹性项目向行尾紧挨着填充。第一个弹性项的main-end外边距边线被放置在该行的main-end边线，而后续弹性项依次平齐摆放。
+  justify-content: flex-end;
+}
+// 登陆表单的样式 结束
+```
+
+
+
+最终效果：
+
+![1602508496500](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602508496500.png)
+
+
+
 
 
 ## ◆主页布局
