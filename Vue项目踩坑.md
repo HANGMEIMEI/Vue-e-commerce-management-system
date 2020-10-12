@@ -42,6 +42,18 @@
 
 ## 文件末尾需要换行符，但找不到
 
+不允许尾随的空格！
+
+
+
+##  Trailing spaces not allowed   
+
+
+
+
+
+
+
 
 
 
