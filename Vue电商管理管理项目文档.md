@@ -735,6 +735,68 @@ const routes = [
 
 
 
+#### 6 登陆组件布局
+
+还有，在开发的时候要安装依赖的化，要选择开发依赖！ha !
+
+
+
+```vue
+// 这是一个单文件组件 由三部分组成
+// 1 结构
+// 2 样式
+// 3 行为
+<template>
+  <div class="login-container">登录组件</div>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style lang="less" scoped>
+// lang="less" 表示这个节点中支持less语法格式
+// scoped 是一个vue的指令 是用来控制组件的样式的生效的区间！
+// 只要是一个单文件组件 我们样式都推荐加上scoped属性！因为不会影响到其他的组件！从而防止组件之间的样式冲突！
+.login-container {
+  background-color: #2b4b6b
+}
+</style>
+
+```
+
+![1602474257060](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602474257060.png)
+
+##### 我们要让背景色沾满全屏：
+
+第一步：
+
+![1602474627870](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602474627870.png)
+
+
+
+第二步： 在入口文件中导入全局样式表
+
+![1602474778209](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602474778209.png)
+
+
+
+第三步： 让login-container这个div高度设为百分之百！
+
+![1602475215540](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602475215540.png)
+
+
+
+搞定：
+
+![1602475242585](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602475242585.png)
+
+
+
+
+
+##### 绘制登录盒子：
+
 
 
 
