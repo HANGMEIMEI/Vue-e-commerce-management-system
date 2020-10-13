@@ -1176,6 +1176,123 @@ export default {
 
 
 
+##### 08 实现表单的数据验证：
+
+表单验证
+在防止用户犯错的前提下，尽可能让用户更早地发现并纠正错误。
+
+第一步： 如何添加验证规则对象！
+
+![1602555433735](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602555433735.png)
+
+首先要为el-form这个组件通过属性绑定，绑定一个rules属性，它的值是一个rules对象【验证规则对象】
+
+第二步： 在data数据区定义！【规则一般都是数组】数组中的每一个规则都是一个对象
+
+
+
+
+
+![1602555496021](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602555496021.png)
+
+
+
+required: true 代表这是一个必选项！
+
+message: ‘lvhang’  是一个错误的消息!【如果不符合这个规则，就会显示这个消息】
+
+trigger: ‘blur’ 触发验证【鼠标在失去焦点的时候触发验证的行为】
+
+
+
+
+
+min: 3  代表最小的长度
+
+max: 13 自然就代表最大的长度了
+
+message: ‘如果长度不在3-13之间就会显示这个消息’  是一个错误的消息!【如果不符合这个规则，就会显示这个消息】
+
+trigger: ‘blur’ 触发验证【鼠标在失去焦点的时候触发验证的行为】
+
+
+
+
+
+第三步： 怎么把验证规则和表单验证对象绑定在一起呢！
+
+Form组件提供了表单验证的功能，只需要通过rules属性传入约定的验证规则，并将Form-ltem的prop属性设置为需校验的字段名即可。
+
+![1602556478568](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602556478568.png)
+
+
+
+###### 脚下留心
+
+就是最后一步把验证规则和表单验证对象绑定在一起的时候
+
+**prop=“规则的名字”是放在<el-form-item>元素里面的！**
+
+具体的代码：
+
+结构：
+
+```vue
+<!-- 登录表单区域 开始 -->
+      <el-form
+        :rules="loginFormRules"
+        :model="loginForm"
+        label-width="0px"
+        class="login_form"
+      >
+        <!-- 用户名： -->
+        <el-form-item prop="username">
+          <!--  prefix-icon="el-icon-search" 表示输入框前面的小图标！ -->
+          <el-input
+            v-model="loginForm.username"
+            prefix-icon="iconfont icon-yonghuming"
+          ></el-input>
+        </el-form-item>
+        <!-- 密码 -->
+        <el-form-item prop="password">
+          <el-input
+            v-model="loginForm.password"
+            prefix-icon="iconfont icon-mima"
+            type="password"
+          ></el-input>
+        </el-form-item>
+</el-form>
+```
+
+业务代码：
+
+```js
+// 这是表单的验证规则对象！
+      loginFormRules: {
+        // 一个规则一个数组
+        // 验证用户名是否合法
+        username: [
+          {
+            required: true,
+            message: "你输入的用户名有误，请重新输入",
+            trigger: "blur"
+          },
+          { min: 5, max: 15, message: "如果长度不在3-13之间就会显示这个消息", trigger: "blur" }
+        ],
+        // 验证输入的密码是否合法！
+        password: [
+          {
+            required: true,
+            message: "你输入的密码有误，请重新输入",
+            trigger: "blur"
+          },
+          { min: 5, max: 15, message: "如果长度不在3-13之间就会显示这个消息", trigger: "blur" }
+        ]
+      }
+```
+
+
+
 ## ◆主页布局
 
 

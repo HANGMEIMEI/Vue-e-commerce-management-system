@@ -10,15 +10,27 @@
         <img src="../assets/logo.png" alt="" />
       </div>
       <!-- 登录表单区域 开始 -->
-      <el-form :model="loginForm" label-width="0px" class="login_form">
+      <el-form
+        :rules="loginFormRules"
+        :model="loginForm"
+        label-width="0px"
+        class="login_form"
+      >
         <!-- 用户名： -->
-        <el-form-item>
+        <el-form-item prop="username">
           <!--  prefix-icon="el-icon-search" 表示输入框前面的小图标！ -->
-          <el-input v-model="loginForm.username" prefix-icon="iconfont icon-yonghuming"></el-input>
+          <el-input
+            v-model="loginForm.username"
+            prefix-icon="iconfont icon-yonghuming"
+          ></el-input>
         </el-form-item>
         <!-- 密码 -->
-        <el-form-item>
-          <el-input v-model="loginForm.password" prefix-icon="iconfont icon-mima" type="password"></el-input>
+        <el-form-item prop="password">
+          <el-input
+            v-model="loginForm.password"
+            prefix-icon="iconfont icon-mima"
+            type="password"
+          ></el-input>
         </el-form-item>
         <!-- 按钮区域 -->
         <el-form-item class="btns">
@@ -37,8 +49,30 @@ export default {
     return {
       // 这是登录表单的数据绑定对象！
       loginForm: {
-        username: 'lvhang',
-        password: '23'
+        username: "",
+        password: ""
+      },
+      // 这是表单的验证规则对象！
+      loginFormRules: {
+        // 一个规则一个数组
+        // 验证用户名是否合法
+        username: [
+          {
+            required: true,
+            message: "你输入的用户名有误，请重新输入",
+            trigger: "blur"
+          },
+          { min: 5, max: 15, message: "如果长度不在3-13之间就会显示这个消息", trigger: "blur" }
+        ],
+        // 验证输入的密码是否合法！
+        password: [
+          {
+            required: true,
+            message: "你输入的密码有误，请重新输入",
+            trigger: "blur"
+          },
+          { min: 5, max: 15, message: "如果长度不在3-13之间就会显示这个消息", trigger: "blur" }
+        ]
       }
     };
   }
