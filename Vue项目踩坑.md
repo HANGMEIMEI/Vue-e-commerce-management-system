@@ -155,4 +155,34 @@ Vue.use(Input)
 
 
 
+
+
+## 6 Unexpected trailing comma  comma-dangle
+
+
+
+意外的尾随逗号逗号
+
+
+
+
+
+##   Missing space before function parentheses  space-before-function-paren
+
+
+
+函数前的空格缺少括号前的空格
+
+
+
+
+
+
+
+
+
+
+
+
+
 error More than 1 blank line not allowed no-multiple-empty-lines

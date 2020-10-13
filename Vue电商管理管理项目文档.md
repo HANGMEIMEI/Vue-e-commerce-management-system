@@ -1095,7 +1095,82 @@ export default {}
 
 
 
+##### 07 实现表单的数据绑定
 
+![1602553517099](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602553517099.png)
+
+第一步： 
+
+为
+
+```vue
+ <!-- 登录表单区域 开始 -->
+      <el-form label-width="0px" class="login_form">
+```
+
+上面的标签添加:model=“form”的属性！【指向一个数据对象】进行数据绑定！
+
+
+
+第二步：
+
+为每一个表单项里面的文本输入框 通过v-model属性绑定到数据对象上具体的属性中！
+
+```vue
+<el-input prefix-icon="iconfont icon-yonghuming"></el-input>
+```
+
+![1602553656150](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602553656150.png)
+
+例如： 上面的图片中
+
+第一个数据会绑定到form对象的name属性
+
+第二个数据绑定到form对象的第二个相应的属性上了！
+
+
+
+具体的代码：
+
+```vue
+<!-- 登录表单区域 开始 -->
+      <el-form :model="loginForm" label-width="0px" class="login_form">
+        <!-- 用户名： -->
+        <el-form-item>
+          <!--  prefix-icon="el-icon-search" 表示输入框前面的小图标！ -->
+          <el-input v-model="loginForm.username" prefix-icon="iconfont icon-yonghuming"></el-input>
+        </el-form-item>
+        <!-- 密码 -->
+        <el-form-item>
+          <el-input v-model="loginForm.password" prefix-icon="iconfont icon-mima" type="password"></el-input>
+        </el-form-item>
+        <!-- 按钮区域 -->
+        <el-form-item class="btns">
+          <el-button type="primary">登录</el-button>
+          <el-button type="info">重置</el-button>
+        </el-form-item>
+      </el-form>
+      <!-- 登录表单区域 结束 -->
+```
+
+业务代码（逻辑代码）：
+
+```js
+<script>
+export default {
+  data () {
+    // data 是一个函数 返回的是一个对象
+    return {
+      // 这是登录表单的数据绑定对象！
+      loginForm: {
+        username: 'lvhang',
+        password: '23'
+      }
+    };
+  }
+};
+</script>
+```
 
 
 
