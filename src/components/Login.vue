@@ -10,7 +10,9 @@
         <img src="../assets/logo.png" alt="" />
       </div>
       <!-- 登录表单区域 开始 -->
+      <!-- 完成重置按钮的功能，重中之重就是获取到loginFormRef【就是表单的实例对象】 ，就能够获取到表单的实例对象了！ -->
       <el-form
+        ref="loginFormRef"
         :rules="loginFormRules"
         :model="loginForm"
         label-width="0px"
@@ -35,7 +37,7 @@
         <!-- 按钮区域 -->
         <el-form-item class="btns">
           <el-button type="primary">登录</el-button>
-          <el-button type="info">重置</el-button>
+          <el-button type="info" @click="resetLoginForm">重置</el-button>
         </el-form-item>
       </el-form>
       <!-- 登录表单区域 结束 -->
@@ -75,6 +77,13 @@ export default {
         ]
       }
     };
+  },
+  methods: {
+    resetLoginForm: function () {
+      // console.log(this)
+      // 获取表单的实例对象
+      this.$refs.loginFormRef.resetFields();
+    }
   }
 };
 </script>

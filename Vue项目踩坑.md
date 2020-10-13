@@ -175,6 +175,48 @@ Vue.use(Input)
 
 
 
+## 07 Property or method "loginFormRef" is not defined on the instance but referenced during render. Make sure that 
+
+上面一句话的意思是你有一个方法但是没有定义，并且不能够渲染到页面，但是页面可以看到的！不影响大局！
+
+![1602598294758](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602598294758.png)
+
+
+
+## 08 Property or method "loginFormRef" is not defined on the instance but referenced during render. Make sure that this property is reactive, either in the data option, or for class-based components, by initializing the property.
+
+属性或方法“ loginFormRef”未在实例上定义，但在渲染期间被引用。 通过初始化该属性，确保该属性在data选项中或对于基于类的组件都是反应性的。
+
+
+
+我出现上面的问题是我在   
+
+```vue
+ref="loginFormRef"
+```
+
+的前面加上了冒号如下：
+
+```
+:ref="loginFormRef"
+```
+
+谨记！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

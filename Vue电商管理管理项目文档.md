@@ -1293,6 +1293,52 @@ Form组件提供了表单验证的功能，只需要通过rules属性传入约�
 
 
 
+##### 09 实现表单的重置按钮的功能：
+
+![1602567144119](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602567144119.png)
+
+
+
+只要我们获取到了表单的实例对象，就可以通过实例对象直接访问resetFields这个函数  从而重置整个表单  将所有字段值 重置为初始值 并移除校验结果！
+
+我们只需要拿到表单的实例对象， 然后调用resetField函数 ，就可以重置整个表单了！
+
+如何拿到这个表单的实例对象呢？！
+
+  
+
+第一步：
+
+ 为表单添加ref引用！ref="loginFormRef" 它的这个值就是表单的实例对象
+
+
+
+第二步：
+
+然后可以通过
+
+```vue
+ methods: {
+    resetLoginForm: function () {
+      // console.log(this)
+      // 获取表单的实例对象
+      this.$refs.loginFormRef.resetFields();
+    }
+  }
+```
+
+获取到表单的实例对象，然后在调用resetFields()方法就可以进行表单重置了！
+
+
+
+
+
+
+
+##### 10 实现表单登录前的预校验
+
+
+
 ## ◆主页布局
 
 
