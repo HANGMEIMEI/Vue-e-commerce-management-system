@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1602550731954'); /* IE9 */
+  src: url('iconfont.eot?t=1602550731954#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAO8AAsAAAAAB+AAAANtAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqDRIMVATYCJAMMCwgABCAFhG0HOxvgBhHVm/3IfiTGMSnrzJI3oWo3EzxfOfX93bWiyA5yARBUZrBTxlOnZwfA5mboGhWhWJLzvJ++Ix0rXAg/fJ7L6U3x1gfKcY6hR70A44AC3QPbQAdaIAl6i+zOIC/qPARwSKcAUqNWgxbYGKxpAsiAvr27YudsmJZmwUawatYaZDEebDVH3QcWhd+X3xQTGxQejXVRk141e1Dlm/WthXaDLh30LNzpPICwCTRQADAgnWp9bdBxrgAaR9OZ9moLg6CmSgaDoUzXWPYfHigExMJq9AGQh+QVfLNcWapvgRVXLX+4yRYQAswFbsr2WCx+GnSyExmVwxc33nEkEGj1/HkLnOvPs6gt/poRtzKz662BQZmZrf3+lvhk5PrHJcJPPk3Xm56VjjjxJK3L9vOJG/Li7pm3L0H2Zay92HtlfCDQGkpkVviftzj+vMRUnctXxy6PjV25Uuq8qxLmNcln8fr9Qw3NWvgTq+3Nt3Llvh1x/pYb0opcjfR4OsvoxSuHymBZtFJGd7aPNGqaMiStcePNSfETkocUbNwkvav0HDGhk3SWUROlR+ejnet2cfq6yW5fZ4jTL+RzP2dYqcWxoeZT37CsyVG+vk9N2RJMa7t7Z8OiNTdGtIpuM2F82/CZkccWxYz0DZ19clisrq6sWTnWHE+eWbBAxbgWZ2pdsCKXLXy1oFy37jIjrq+aO0f1Ub3mzemtdHK2uk/pWVmv993S9MoQr6dmHvdUrmYzF5rYmXUrprd5uY8uAARdvUa7pDBDX9Kz/uFvWNWl47/OERX+214DwOt9qfdwJOgaYPVgowAs/2NyYJfRlZZdG1Xmyky/pmamCgU4up7/1AoQzbvhgThIPYItyjEUIaRBY5ODNGwBePBSAhY2leGQn9qbvcQwDI2YUCAfMxCESA5BEc4laCJ5QBr2LTzE8xcWkaLh0Epi9vTC5JKkqjNqQQfmD8lS945TVNR8x3BVzVllKHgjnykJyzgXizfsyFMsOD9hFfHgmRrs6DKsleBgymhljCLHNk2+7k2jpTYoqjNqQQeYP5Asde/3F1X6/B3DVTW3cGrSb+QzDQ8sjMwA8qbrIM6tXHN+woqIBzxTA3bkwWrnCDjqR2W0MhIHZI6NifTyUN24vKG93wHAwdpTixItBjMwNa3GUg/xasm3DgMAAAA=') format('woff2'),
+  url('iconfont.woff?t=1602550731954') format('woff'),
+  url('iconfont.ttf?t=1602550731954') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1602550731954#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mima:before {
+  content: "\e654";
+}
+
+.icon-yonghuming:before {
+  content: "\e606";
+}
+

@@ -991,7 +991,121 @@ export default {}
 
 
 
+##### 绘制密码和用户名前面的小图标：
+
+![1602549115556](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602549115556.png)
+
+
+
+引入输入框小图标的两种方式：
+
+![1602549690948](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602549690948.png)
+
+
+
+
+
+修改小图标：
+
+![1602550415688](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602550415688.png)
+
+
+
+咱们使用第三方的图标库！：
+
+阿里图标库：
+
+第一步：
+
+​	<https://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.2>
+
+进入网站：
+
+![1602550890889](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602550890889.png)
+
+
+
+第二步：
+
+搜索自己想要的图标，并且加入购物车：
+
+![1602551015834](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602551015834.png)
+
+
+
+
+
+第三步：
+
+![1602551050276](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602551050276.png)
+
+
+
+第四步：点击添加至项目
+
+![1602551077756](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602551077756.png)
+
+
+
+
+
+第五步：
+
+![1602551264276](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602551264276.png)
+
+
+
+第六步：
+
+![1602551321691](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602551321691.png)
+
+
+
+
+
+把下载下来的字体图标放到项目的assets文件夹下面：
+
+并且在入口文件引入字体图标：
+
+![1602551741071](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602551741071.png)
+
+
+
+
+
+最后在登录组件的地方假如相应的类就可以了！
+
+![1602551982685](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602551982685.png)
+
+```vue
+
+          <!--  prefix-icon="el-icon-search" 表示输入框前面的小图标！ -->
+          <el-input prefix-icon="iconfont icon-yonghuming"></el-input>
+        </el-form-item>
+        <!-- 密码 -->
+        <el-form-item>
+          <el-input prefix-icon="iconfont icon-mima"></el-input>
+```
+
+搞定！
+
+![1602552099955](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602552099955.png)
+
+
+
+
+
+
+
+
+
+
+
 ## ◆主页布局
+
+
+
+
 
 ## ◆用户管理模块
 

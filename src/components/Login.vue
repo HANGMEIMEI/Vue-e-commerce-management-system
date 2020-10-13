@@ -13,11 +13,12 @@
       <el-form label-width="0px" class="login_form">
         <!-- 用户名： -->
         <el-form-item>
-          <el-input></el-input>
+          <!--  prefix-icon="el-icon-search" 表示输入框前面的小图标！ -->
+          <el-input prefix-icon="iconfont icon-yonghuming"></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item>
-          <el-input></el-input>
+          <el-input prefix-icon="iconfont icon-mima"></el-input>
         </el-form-item>
         <!-- 按钮区域 -->
         <el-form-item class="btns">
@@ -80,8 +81,8 @@ export default {};
   bottom: 0;
   width: 100%;
   padding: 0 20px;
-//   由于EUI里的输入框默认是标准盒子， 所以会撑大我们的盒子，所以得把盒子转换成CSS3 的盒子
-    box-sizing: border-box;
+  //   由于EUI里的输入框默认是标准盒子， 所以会撑大我们的盒子，所以得把盒子转换成CSS3 的盒子
+  box-sizing: border-box;
 }
 
 .btns {
@@ -90,5 +91,4 @@ export default {};
   justify-content: flex-end;
 }
 // 登陆表单的样式 结束
-
 </style>
