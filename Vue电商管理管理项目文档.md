@@ -1729,6 +1729,36 @@ export default {
 
 
 
+##### 14 处理项目中的语法警告的问题
+
+
+
+在项目中创建格式化文件的配置项！
+
+![1602677170250](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602677170250.png)
+
+
+
+但是我发现没有用，因为我的末尾的逗号还是会出现！
+
+
+
+```
+{
+	//用来隐藏或者取消分号的！
+    "semi": false,
+    // 用单引号来包裹字符串
+    "singleQuote": true
+}
+```
+
+这句代码已经不能够用了，至少2.x不能再用了！【就是函数和后面的括号要有一个空格 就是放在ESlint里面的规则
+
+```js
+    'space-before-function-paren': 0 
+
+```
+
 
 
 
