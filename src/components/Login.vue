@@ -85,9 +85,18 @@ export default {
       this.$refs.loginFormRef.resetFields();
     },
     login: function () {
-      this.$refs.loginFormRef.validate((valid) => {
-        console.log(valid)
+      this.$refs.loginFormRef.validate(async valid => {
+        // console.log(valid)
         //  valid 是一个布尔值 如果预校验的值没有通过就返回false
+        if (!valid) return
+        // const result = await this.$http.post('login', this.loginForm);
+        // 我们从result身上解构出一个data属性，然后重命名为res对象！
+        const { data: res } = await this.$http.post('login', this.loginForm);
+        // console.log(res);
+        // console.log(res.meta.status) // 获取当前的状态码！
+        // 在这儿进行if判断 判断状态码
+        if (res.meta.status !== 400) return console.log("请求的地址不存在或者包含不支持的参数");
+        console.log("请求成功！");
       });
     }
   }
