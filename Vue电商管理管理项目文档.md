@@ -1829,7 +1829,11 @@ git push vue-shop2 develop
 
 
 
+创建一个主页的分支：
 
+```
+git checkout -b home
+```
 
 
 
