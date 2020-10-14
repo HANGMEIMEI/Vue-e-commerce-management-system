@@ -1767,6 +1767,26 @@ export default {
 
 
 
+```js
+import Vue from "vue"
+// 导入element-ui这个组件
+import { Button, Form, Input, FormItem, Message } from 'element-ui'
+```
+
+
+
+##### 16 提交登录功能的代码：
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## 4 ◆主页布局
