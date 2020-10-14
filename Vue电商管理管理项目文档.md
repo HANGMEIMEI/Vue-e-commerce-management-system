@@ -1779,15 +1779,37 @@ import { Button, Form, Input, FormItem, Message } from 'element-ui'
 
 
 
+第一步： 先提交源仓库的代码， 确保仓库是处于干净的状态。
+
+
+
+第二步：
+
+切换分支
+
+```
+git checkout develop
+```
+
+合并分支：
 
 
 
 
 
+```
+git merge login
+```
 
 
 
+最后，再推送到远程的仓库
 
+```
+git push vue-shop2 develop
+```
+
+搞定！
 
 ## 4 ◆主页布局
 
