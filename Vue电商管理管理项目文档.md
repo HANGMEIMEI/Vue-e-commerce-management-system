@@ -1516,9 +1516,65 @@ $message上提供了多种弹窗的方法选择相应的弹窗提示就可以了
 
 
 
+之后，再用路由的编程时导航跳转到第二个页面 
+
+```js
+ // 2.通过编程式导航跳转到后台主页，路由地址是/home
+        this.$router.push("/home")
+```
 
 
-## ◆主页布局
+
+然后，在components中新建Home.vue组件
+
+```js
+// 同样是一个单文件组件
+<template>
+    <div>
+        Home 组件
+    </div>
+</template>
+<script>
+export default {};
+</script>
+
+<style lang="less" scoped>
+</style>
+
+```
+
+
+
+再然后： 在路由的js文件中导入主页的组件并且加入新的规则
+
+```js
+// 导入主页组件
+import Home from '../components/Home.vue'
+
+
+ // 加入新的主页路由规则
+  // path下面的路径和编程导航的路径必须是一样的
+  { path: "/home", component: Home }
+
+```
+
+
+
+
+
+完成效果：
+
+![1602666262628](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602666262628.png)
+
+
+
+
+
+
+
+
+
+## ##4 ◆主页布局
 
 
 

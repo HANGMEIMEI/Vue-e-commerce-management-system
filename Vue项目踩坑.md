@@ -251,6 +251,37 @@ error More than 1 blank line not allowed no-multiple-empty-lines
 
 
 
+ Expected indentation of 0 spaces but found 4 
+
+
+
+预期缩进0个空格，但发现4个
+
+
+
+
+
+vue-router.esm.js?4fb5:16 [vue-router] Non-nested routes must include a leading slash character. Fix the following routes: 
+
+- home
+
+
+
+```js
+{ path: "/home", component: Home }
+```
+
+vue-router.esm.js？4fb5：16 [vue-router]非嵌套路由必须包含前导斜杠字符。 修正以下路线：
+-家
+
+上面的是正确的代码：错的是下面的
+
+```js
+{ path: "home", component: Home }
+```
+
+
+
 
 
 
