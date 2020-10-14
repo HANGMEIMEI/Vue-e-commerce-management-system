@@ -1570,11 +1570,114 @@ import Home from '../components/Home.vue'
 
 
 
+### 3.3.2  路由导航守卫的访问控制权限
+
+
+
+需求： 只有当登录了之后才可以看到主页的页面， 默认用户是没有登录的，所以不应该看到这个页面！
+
+![1602667102316](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602667102316.png)
+
+
+
+如果用户没有登录，但是直接通过URL访问特定页面，需要重新导航到登录页面。【开始我还以为是路由的重定向呢！】
+
+![1602667290024](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602667290024.png)
+
+为路由对象调用一个beforeEach函数
+
+上面的beforeEach就是导航守卫 接收一个回调函数 接收三个形参 
+
+ to： 代表我们将要访问的页面路径
+
+from： 代表我们是从哪个页面【路径】跳转过来的！
+
+next： 放行的函数！
+
+
+
+在路由的js文件里进行配置，但是2.x的版本有点不一样！
+
+```js
+const routes = [
+  { path: '/', redirect: '/login' },
+  { path: '/login', component: Login },
+  // 加入新的主页路由规则
+  // path下面的路径和编程导航的路径必须是一样的
+  { path: "/home", component: Home }
+]
+
+```
+
+下面是3.版本的!
+
+![1602670746940](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602670746940.png)
 
 
 
 
-## ##4 ◆主页布局
+
+一样的一样的！
+
+如下：
+
+```js
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+// 导入登录组件
+import Login from '../components/Login.vue'
+// 导入主页组件
+import Home from '../components/Home.vue'
+
+Vue.use(VueRouter)
+
+// 路由规则是由path来指定咱们路径 当用户访问/login的时候我们通过component这个属性指定要展示的组件
+const routes = [
+  { path: '/', redirect: '/login' },
+  { path: '/login', component: Login },
+  // 加入新的主页路由规则
+  // path下面的路径和编程导航的路径必须是一样的
+  { path: "/home", component: Home }
+]
+
+const router = new VueRouter({
+  routes
+})
+
+export default router
+
+```
+
+
+
+挂载路由导航守卫：
+
+```js
+// 挂载路由导航守卫
+router.beforeEach((to, from, next) => {
+  // to 将要访问的路径
+  // from 代表从哪个路径跳转而来
+  // next 是一个函数， 表示放行！
+  //    next()  直接放行   next('/login)  强制跳转
+  // ...如果用户访问的是登录页， 直接放行
+  if (to.path === '/login') return next()
+  // 获取token的值
+  // 从 sessionstorage 中获取到 保存的token值
+  const tokenStr = window.sessionStorage.getItem('token')
+  // 没有token 强制跳转登陆页面
+  if (!tokenStr) return next('/login')
+  // 有token 直接放行就可以了！
+  next()
+})
+```
+
+搞定！
+
+
+
+3.4 退出功能
+
+## 4 ◆主页布局
 
 
 
