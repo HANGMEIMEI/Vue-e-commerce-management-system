@@ -1,4 +1,4 @@
-import Vue from "vue"
+import Vue from 'vue'
 // 导入element-ui这个组件
 import { Button, Form, Input, FormItem, Message } from 'element-ui'
 // 导入用来显示[成功、警告、消息、错误]类的操作反馈。的组件 Message 使用他的方式 需要进行全局挂载

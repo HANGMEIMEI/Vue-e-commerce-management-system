@@ -1815,6 +1815,24 @@ git push vue-shop2 develop
 
 
 
+### 4.1 整体布局
+
+![1602680207339](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602680207339.png)
+
+整体布局：先上下划分，再左右划分。
+
+![1602680234819](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602680234819.png)
+
+
+
+![1602680315351](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602680315351.png)
+
+
+
+
+
+
+
 
 
 ## ◆用户管理模块

@@ -13,7 +13,7 @@ const routes = [
   { path: '/login', component: Login },
   // 加入新的主页路由规则
   // path下面的路径和编程导航的路径必须是一样的
-  { path: "/home", component: Home }
+  { path: '/home', component: Home }
 ]
 
 const router = new VueRouter({

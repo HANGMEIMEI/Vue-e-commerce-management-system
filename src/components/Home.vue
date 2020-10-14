@@ -1,7 +1,15 @@
 // 同样是一个单文件组件
 <template>
-  <!--暂时把退出按钮写死 -->
-  <el-button type="info" @click="logout">退出</el-button>
+  <el-container>
+    <!-- 头部区域 -->
+    <el-header
+      >Header<el-button type="info" @click="logout">退出</el-button>
+    </el-header>
+    <el-container>
+      <el-aside width="200px">Aside</el-aside>
+      <el-main>Main</el-main>
+    </el-container>
+  </el-container>
 </template>
 <script>
 export default {
