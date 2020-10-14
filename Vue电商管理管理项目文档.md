@@ -1473,6 +1473,47 @@ $message上提供了多种弹窗的方法选择相应的弹窗提示就可以了
 
 
 
+##### 13 进行登录成功后的操作行为！
+
+
+
+ // 1.将登录成功之后的token，保存到客户端的sessionstorage中
+
+（把token保存到浏览器中）
+
+
+
+```
+为什么把token保存到sessionstorage中而不是localstorage中呢?!
+
+答： 因为sessionstorage是会话存储，localstorage是本地存储 但是我们的token只应在当前网站打开期间生效  所以把token保存到sessionstorage中更加适合一些！
+```
+
+​	
+
+​        
+
+
+
+// 1.1项目中出了登录之外的其他API接口，必须在登录之后才能访问
+
+​        // 1.2 token只应在当前网站打开期间生效，所以将token保存在sessionstorage中
+
+​        // 2.通过编程式导航跳转到后台主页，路由地址是/home
+
+```js
+ // 1.2 token只应在当前网站打开期间生效，所以将token保存在sessionstorage中
+        console.log(res.data.token); // 可以通过这种方式拿到token   Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2MDI2NjMyODksImV4cCI6MTYwMjc0OTY4OX0.wkZu4m7-AMfO73kZGwxVyct2kdh015q2otsT0HAqu_A
+        // 保存token的值sessionStorage中！
+        window.sessionStorage.setItem("token", res.data.token)
+        // 2.通过编程式导航跳转到后台主页，路由地址是/home
+        this.$router.push('/home')
+```
+
+就可以看到sessionStorage的token值了！
+
+![1602663628413](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602663628413.png)
+
 
 
 
