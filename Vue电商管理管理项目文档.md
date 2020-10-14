@@ -1835,6 +1835,115 @@ git push vue-shop2 develop
 git checkout -b home
 ```
 
+```html
+// 同样是一个单文件组件
+<template>
+  <el-container>
+    <!-- 头部区域 -->
+    <el-header
+      >Header<el-button type="info" @click="logout">退出</el-button>
+    </el-header>
+    <!-- 页面主体区域 开始 -->
+    <el-container>
+      <!-- 侧边栏 -->
+      <el-aside width="200px">Aside</el-aside>
+      <!-- 右侧内容主体 -->
+      <el-main>Main</el-main>
+    </el-container>
+    <!-- 页面主体区域 结束 -->
+  </el-container>
+</template>
+```
+
+![1602681463875](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602681463875.png)
+
+
+
+上面的样式并没有生效，并且控制台中还给出了报错信息！
+
+
+
+原因是我们想要使用这些组件，但是并没有注册这些组件
+
+所以我们想要使用这些组件的话，就必须再plugins文件夹中的js文件中导入这些组件和使用才行！
+
+
+
+```js
+import { Button, Form, Input, FormItem, Message, Container, Header, Aside, Main } from 'element-ui'
+// 导入用来显示[成功、警告、消息、错误]类的操作反馈。的组件 Message 使用他的方式 需要进行全局挂载
+
+Vue.use(Button)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Input)
+Vue.use(Container)
+Vue.use(Header)
+Vue.use(Aside)
+Vue.use(Main)
+```
+
+
+
+主页的结构和基本的样式代码：
+
+```vue
+// 同样是一个单文件组件
+<template>
+  <el-container class="home-container">
+    <!-- 头部区域 开始-->
+    <el-header
+      >Header<el-button type="info" @click="logout">退出</el-button>
+    </el-header>
+    <!-- 头部区域 结束-->
+
+    <!-- 页面主体区域 开始 -->
+    <el-container>
+      <!-- 侧边栏 -->
+      <el-aside width="200px">Aside</el-aside>
+      <!-- 右侧内容主体 -->
+      <el-main>Main</el-main>
+    </el-container>
+    <!-- 页面主体区域 结束 -->
+  </el-container>
+</template>
+<script>
+export default {
+  methods: {
+    logout: function () {
+      // 清空sessionStorage中存储的内容
+      window.sessionStorage.clear()
+      // 清除完内容后 把当前页面重定向到登录页面
+      this.$router.push('/login')
+    }
+  }
+}
+</script>
+
+<style lang="less" scoped>
+.home-container {
+  height: 100%;
+}
+
+.el-header {
+  background-color: rgb(49,55,58);
+}
+
+.el-aside {
+  background-color: rgb(49,54,67);
+}
+
+.el-main {
+  background-color: #EAEDF1;
+}
+</style>
+
+```
+
+最后再把颜色统一一下！都用十六进制！
+
+
+
 
 
 
