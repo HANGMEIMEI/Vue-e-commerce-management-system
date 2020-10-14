@@ -1381,7 +1381,7 @@ Form组件提供了表单验证的功能，只需要通过rules属性传入约�
 
 
 
-##### 11 根据表单预验证的结果是否发起请求
+##### 11 根据表单预验证的结果是否发起登录请求
 
 
 
@@ -1443,6 +1443,33 @@ Vue.prototype.$http = axios
 
 
 ##### 12 以友好的方式提示用户登录成功或者失败
+
+
+
+![1602660060184](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602660060184.png)
+
+
+
+第一步：
+
+在element-ui中进行导入!弹框组件！
+
+ 然后再把Message挂载为Vue原型上的一个属性！！然后起一个名字！这样在每个组件中都可以用this进行使用Q！
+
+```js
+// 这个的$message是一个自定义属性 可以改名字，只要合法就行!但后面的Message是一个组件 必须按照要求书写！、
+// 下面的代码代表把Message组件挂载到了Vue的原型对象上！这样的话，每一个组件， 都可以通过this访问到$message 那么$message就会进行弹窗提示了！
+Vue.prototype.$message = Message
+```
+
+第二步：：
+
+$message上提供了多种弹窗的方法选择相应的弹窗提示就可以了!
+
+```js
+ if (res.meta.status !== 200) return this.$message.error("请求的地址不存在或者包含不支持的参数")
+        this.$message.success("请求成功！")
+```
 
 
 

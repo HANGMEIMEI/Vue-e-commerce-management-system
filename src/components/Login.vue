@@ -94,9 +94,10 @@ export default {
         const { data: res } = await this.$http.post('login', this.loginForm);
         // console.log(res);
         // console.log(res.meta.status) // 获取当前的状态码！
-        // 在这儿进行if判断 判断状态码
-        if (res.meta.status !== 400) return console.log("请求的地址不存在或者包含不支持的参数");
-        console.log("请求成功！");
+        // 在这儿进行if判断 判断状态码 
+        // 并且进行弹出框的提示用户登录成功或者失败！
+        if (res.meta.status !== 200) return this.$message.error("请求的地址不存在或者包含不支持的参数")
+        this.$message.success("请求成功！")
       });
     }
   }
