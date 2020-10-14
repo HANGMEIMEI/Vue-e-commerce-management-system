@@ -286,6 +286,36 @@ vue-router.esm.js？4fb5：16 [vue-router]非嵌套路由必须包含前导斜�
 
 
 
+ The template root requires an element rather than texts  vue/valid-template-root
+
+模板根目录需要一个元素，而不是文本vue / valid-template-root
+
+
+
+不能在Vue的但文件中直接进行文本的填充！必须使用元素进行包裹！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1668,14 +1668,70 @@ router.beforeEach((to, from, next) => {
   if (!tokenStr) return next('/login')
   // 有token 直接放行就可以了！
   next()
-})
+})s
 ```
 
 搞定！
 
 
 
-3.4 退出功能
+### 3.4 退出功能
+
+#### 退出功能的实现原理
+
+基于token的方式实现退出比较简单，只需要销毁本地的token即可。这样，后续的请求就不会携带token，必须重新登录生成一个新的token之后才可以访问页面。~
+
+核心代码：
+
+![1602672217339](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602672217339.png)
+
+```
+
+```
+
+
+
+在Home中新增一个退出功能的按钮：
+
+并且在按钮中绑定一个点击事件，
+
+之后我们为点击事件调用清除sessionStorage内容的方法
+
+最后再把当前页面重定向到登录页面，搞定！
+
+
+
+```js
+// 同样是一个单文件组件
+<template>
+    <!--暂时把退出按钮写死 -->
+    <el-button type="info" @click="logout">退出</el-button>
+</template>
+<script>
+export default {
+  methods: {
+    logout: function () {
+      // 清空sessionStorage中存储的内容
+      window.sessionStorage.clear()
+      // 清除完内容后 把当前页面重定向到登录页面
+      this.$router.push("/login")
+    }
+  }
+};
+</script>
+
+<style lang="less" scoped>
+</style>
+
+```
+
+
+
+
+
+
+
+
 
 ## 4 ◆主页布局
 
