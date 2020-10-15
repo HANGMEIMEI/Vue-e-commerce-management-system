@@ -2101,6 +2101,48 @@ Vue.prototype.$message = Message
 
 
 
+### 4.3 通过接口获取菜单数据
+
+除了登录接口，其他的接口都需要授权
+
+
+
+- 需要授权的 API ，必须在请求头中使用 `Authorization` 字段提供 `token` 令牌
+
+
+
+通过axios 请求拦截器添加token，保拥有获取数据的权限。
+
+![1602738815693](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602738815693.png)
+
+
+
+#### 设置axios的请求拦截器
+
+ 从而为请求头对象挂在一个自定义属性 他的值就是我们曾经在sessionStorage中存储的token值！
+
+
+
+##### 01 入口函数main.js
+
+找到配置节点：
+
+```js
+// 把这个包挂载到Vue的原型对象上！之前，为他设置一个拦截器！【axios.interceptors.request】
+axios.interceptors.request.use(config => {
+  console.log(config)
+  // 为config 作预处理
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  // 在最后必须return config
+  return config
+})
+```
+
+在登录退出出之后，然后重新登录查看network 中的请求头
+
+看Authorization有没有加到请求头里面
+
+![1602743496015](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602743496015.png)
 
 
 
@@ -2108,12 +2150,7 @@ Vue.prototype.$message = Message
 
 
 
-
-
-
-
-
-
+搞定！
 
 ## ◆用户管理模块
 
