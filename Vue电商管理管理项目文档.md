@@ -2152,6 +2152,140 @@ axios.interceptors.request.use(config => {
 
 搞定！
 
+
+
+
+
+### 4.4 发起请求获取左侧的导航菜单
+
+
+
+请求左侧菜单
+
+相关的代码：
+
+```js
+export default {
+  // 把立即获取到的数据放到我们自己的data中
+  data () {
+    return {
+      // 左侧菜单数据
+      menuList: []
+    }
+  },
+  // 整个页面刚一加载的时候就应该立即获取左侧菜单数据
+  // 我们在行为区域定义一个生命周期函数
+  created () {
+    this.getMenuList()
+  },
+  methods: {
+    logout: function () {
+      // 清空sessionStorage中存储的内容
+      window.sessionStorage.clear()
+      // 清除完内容后 把当前页面重定向到登录页面
+      this.$router.push('/login')
+    },
+    // 获取所有的菜单！
+    async getMenuList () {
+      const { data: res } = await this.$http.get('menus')
+      if (res.meta.status !== 200) return this.$message.console.error(res.meta.msg)
+      this.menuList = res.data
+      console.log(res)
+      console.log(this.menuList)
+    }
+  }
+}
+```
+
+
+
+
+
+#### 01 实现左侧菜单的UI绘制
+
+为什么会选择用双重for循环呢！
+
+因为从！
+
+```js
+    // 获取所有的菜单！
+    async getMenuList () {
+      const { data: res } = await this.$http.get('menus')
+      if (res.meta.status !== 200) return this.$message.console.error(res.meta.msg)
+      this.menuList = res.data
+      console.log(res)
+      console.log(this.menuList)
+    }
+```
+
+
+
+![1602749532570](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602749532570.png)
+
+res的返回值来看
+
+明显就是数组嵌套数组嘛！
+
+外层for循环主要渲染一级菜单，内层for循环主要渲染二级菜单！
+
+
+
+
+
+如果我们要绘制左侧的菜单那就只需要一个双重for循环就可以了！
+
+```vue
+ <!-- 一级菜单！ -->
+          <el-submenu :index="item.id + ''" v-for="item in menuList" :key="item.id">
+```
+
+```vue
+
+ <!-- 二级菜单！ -->
+            <el-menu-item :index="subItem.id +''" v-for="subItem in item.children" :key="subItem.id">
+
+```
+
+
+
+为什么当我们点击一个菜单的时候，所有的菜单都打开或者关闭呢？！
+
+
+
+因为当前我们用的index都是相同的！所有都接受同一个指令，我们得为不同的菜单指定不同的index
+
+采用动态绑定的方式为不同的菜单绑定一个不同的index
+
+因为每个菜单项的id不同，所以我们就指定id为菜单的index，然后绑定上去
+
+```
+:index="item.id + ''"
+```
+
+
+
+![1602750364443](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602750364443.png)
+
+
+
+报错了，是因为当前的index只接受字符串，不接收数值！最简单的方法就是为index 拼接上一个空的字符串！因为一个数值和一个字符串拼接就会得到一个字符串！
+
+
+
+
+
+两层for循环完成左侧菜单的渲染【绘制】
+
+![1602751344498](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602751344498.png)
+
+
+
+
+
+
+
+
+
 ## ◆用户管理模块
 
 ## ◆权限管理模块
