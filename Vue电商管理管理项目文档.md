@@ -2000,6 +2000,117 @@ header区域的主要的内容：
 
 
 
+### 4.2 左侧菜单的布局
+
+
+
+![1602736001768](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602736001768.png)
+
+菜单分为二级，并且可以折叠。
+
+![1602736045481](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602736045481.png)
+
+
+
+![1602736347609](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602736347609.png)
+
+
+
+上面的样式并没有生效，同样是组件要按需导入！并且要使用！【注册为全局组件！】
+
+```
+import Vue from 'vue'
+// 导入element-ui这个组件
+import {
+  Button,
+  Form,
+  Input,
+  FormItem,
+  Message,
+  Container,
+  Header,
+  Aside,
+  Main,
+  Menu,
+  Submenu,
+  MenuItemGroup,
+  MenuItem
+} from 'element-ui'
+// 导入用来显示[成功、警告、消息、错误]类的操作反馈。的组件 Message 使用他的方式 需要进行全局挂载
+
+Vue.use(Button)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Input)
+Vue.use(Container)
+Vue.use(Header)
+Vue.use(Aside)
+Vue.use(Main)
+Vue.use(Menu)
+Vue.use(MenuItemGroup)
+Vue.use(Submenu)
+Vue.use(MenuItem)
+// 这个的$message是一个自定义属性 可以改名字，只要合法就行!但后面的Message是一个组件 必须按照要求书写！、
+// 下面的代码代表把Message组件挂载到了Vue的原型对象上！这样的话，每一个组件， 都可以通过this访问到$message 那么$message就会进行弹窗提示了！
+Vue.prototype.$message = Message
+
+```
+
+上面的menuGroup可以删掉，因为我们在项目中没有用到！
+
+
+
+侧边栏区域的代码：
+
+```html
+ <!-- 侧！边栏菜单区域 -->
+        <el-menu
+          background-color="rgb(49,54,67)"
+          text-color="#fff"
+          active-text-color="#ffd04b"
+        >
+          <!-- 一级菜单！ -->
+          <el-submenu index="1">
+            <!-- 一级菜单的模板区域！ -->
+            <template slot="title">
+              <!-- 图标 -->
+              <i class="el-icon-location"></i>
+              <!-- 里面的文本！ -->
+              <span>导航一</span>
+            </template>
+            <!-- 二年级菜单！ -->
+            <el-menu-item index="1-4-1">
+              <template slot="title">
+                <!-- 图标 -->
+                <i class="el-icon-location"></i>
+                <!-- 里面的文本！ -->
+                <span>导航一</span>
+              </template>
+            </el-menu-item>
+          </el-submenu>
+        </el-menu>
+```
+
+
+
+最终的效果！：
+
+![1602738124590](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602738124590.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

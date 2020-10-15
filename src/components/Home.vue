@@ -4,7 +4,7 @@
     <!-- 头部区域 开始-->
     <el-header>
       <div>
-        <img src="../assets/heima.png" alt="">
+        <img src="../assets/heima.png" alt="" />
         <span>电商后台管理系统</span>
       </div>
       <el-button type="info" @click="logout">退出</el-button>
@@ -14,7 +14,34 @@
     <!-- 页面主体区域 开始 -->
     <el-container>
       <!-- 侧边栏 -->
-      <el-aside width="200px">Aside</el-aside>
+      <el-aside width="200px">
+        <!-- 侧！边栏菜单区域 -->
+        <el-menu
+          background-color="rgb(49,54,67)"
+          text-color="#fff"
+          active-text-color="#ffd04b"
+        >
+          <!-- 一级菜单！ -->
+          <el-submenu index="1">
+            <!-- 一级菜单的模板区域！ -->
+            <template slot="title">
+              <!-- 图标 -->
+              <i class="el-icon-location"></i>
+              <!-- 里面的文本！ -->
+              <span>导航一</span>
+            </template>
+            <!-- 二年级菜单！ -->
+            <el-menu-item index="1-4-1">
+              <template slot="title">
+                <!-- 图标 -->
+                <i class="el-icon-location"></i>
+                <!-- 里面的文本！ -->
+                <span>导航一</span>
+              </template>
+            </el-menu-item>
+          </el-submenu>
+        </el-menu>
+      </el-aside>
       <!-- 右侧内容主体 -->
       <el-main>Main</el-main>
     </el-container>
@@ -40,7 +67,7 @@ export default {
 }
 // 头部区域的样式
 .el-header {
-  background-color: rgb(49,55,58);
+  background-color: rgb(49, 55, 58);
   // 为头部区域添加弹性布局
   display: flex;
   // 左右贴边对齐！
@@ -62,14 +89,13 @@ export default {
       padding-right: 20px;
     }
   }
-
 }
 
 .el-aside {
-  background-color: rgb(49,54,67);
+  background-color: rgb(49, 54, 67);
 }
 
 .el-main {
-  background-color: #EAEDF1;
+  background-color: #eaedf1;
 }
 </style>
