@@ -20,6 +20,7 @@
           background-color="rgb(49,54,67)"
           text-color="#fff"
           active-text-color="rgb(83,185,255)"
+          unique-opened
         >
           <!-- 一级菜单！ -->
           <el-submenu :index="item.id + ''" v-for="item in menuList" :key="item.id">
@@ -122,6 +123,10 @@ export default {
 
 .el-aside {
   background-color: rgb(49, 54, 67);
+  // 解决选中的边框线
+  .el-menu {
+    border-right: none;
+  }
 }
 
 .el-main {

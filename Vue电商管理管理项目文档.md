@@ -2320,6 +2320,53 @@ res的返回值来看
 
 
 
+#### 03 继续优化左侧菜单
+
+我们的需求，一级菜单只能打开一个！
+
+目前“：
+
+![1602757825643](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602757825643.png)
+
+可以打开多个一级菜单！
+
+解决！：
+
+
+
+![1602757602275](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602757602275.png)
+
+
+
+上面的属性要加给谁，得看这个属性是属于谁的？! menu 的！
+
+```vue
+ <el-menu
+          background-color="rgb(49,54,67)"
+          text-color="#fff"
+          active-text-color="rgb(83,185,255)"
+          unique-opened
+        >
+```
+
+搞定！
+
+![1602757896635](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602757896635.png)
+
+
+
+优化整个菜单栏右侧的边框线！
+
+![1602759091281](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602759091281.png)
+
+变得平滑了！
+
+
+
+
+
+
+
 
 
 ## ◆用户管理模块
