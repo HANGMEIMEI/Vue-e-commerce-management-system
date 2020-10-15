@@ -48,7 +48,10 @@
         </el-menu>
       </el-aside>
       <!-- 右侧内容主体 -->
-      <el-main>Main</el-main>
+      <el-main>
+        <!-- 路由的占位符 -->
+        <router-view></router-view>
+      </el-main>
     </el-container>
     <!-- 页面主体区域 结束 -->
   </el-container>
