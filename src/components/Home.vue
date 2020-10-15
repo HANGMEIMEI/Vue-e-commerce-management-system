@@ -14,13 +14,16 @@
     <!-- 页面主体区域 开始 -->
     <el-container>
       <!-- 侧边栏 -->
-      <el-aside width="200px">
+      <el-aside :width="isCollapse ? '64px' : '200px'">
+        <div class="toggle-button" @click="toggleCollapse">|||</div>
         <!-- 侧！边栏菜单区域 -->
         <el-menu
           background-color="rgb(49,54,67)"
           text-color="#fff"
           active-text-color="rgb(83,185,255)"
           unique-opened
+          :collapse="isCollapse"
+          :collapse-transition="false"
         >
           <!-- 一级菜单！ -->
           <el-submenu :index="item.id + ''" v-for="item in menuList" :key="item.id">
@@ -64,7 +67,9 @@ export default {
         101: 'iconfont icon-shangpinguanli',
         102: 'iconfont icon-dingdanguanli',
         145: 'iconfont icon-shujutongji'
-      }
+      },
+      // 是否折叠 默认代表不折叠！
+      isCollapse: false
     }
   },
   // 整个页面刚一加载的时候就应该立即获取左侧菜单数据
@@ -86,6 +91,12 @@ export default {
       this.menuList = res.data
       console.log(res)
       console.log(this.menuList)
+    },
+    // 点击按钮，切换菜单的折叠与展开！
+    toggleCollapse: function (a) {
+      // console.log(a)
+      // 进行isCollapse的取反操作！
+      this.isCollapse = !this.isCollapse
     }
   }
 }
@@ -140,5 +151,20 @@ export default {
 
 .juli {
   vertical-align: top;
+}
+
+// 折叠与展开功能的样式
+.toggle-button {
+  background-color: rgb(72,82,100);
+  font-size: 10px;
+  line-height: 24px;
+  color: #fff;
+  text-align: center;
+  // letter-spacing 属性增加或减少字符间的空白（字符间距）。
+  // 该属性定义了在文本字符框之间插入多少空间。由于字符字形通常比其字符框要窄，指定长度值时，会调整字母之间通常的间隔。因此，normal 就相当于值为 0。
+  // 注释：允许使用负值，这会让字母之间挤得更紧。
+  letter-spacing: 0.2em;
+  // 鼠标经过变成小手！
+  cursor: pointer;
 }
 </style>

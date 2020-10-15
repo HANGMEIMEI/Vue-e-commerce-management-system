@@ -2316,7 +2316,7 @@ res的返回值来看
 
  这个地方有一点问题，就是2.x的版本如果用单引号包裹数值，会报错的，就是上面的错误，记住就可以了！
 
-04 修改文字图标和菜单之间的距离
+ 04 修改文字图标和菜单之间的距离
 
 
 
@@ -2360,6 +2360,36 @@ res的返回值来看
 ![1602759091281](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602759091281.png)
 
 变得平滑了！
+
+
+
+#### 04 实现左侧菜单的折叠与展开功能！
+
+
+
+![1602775355548](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602775355548.png)
+
+
+
+![1602776032018](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602776032018.png)
+
+
+
+出现问题之后你要知道是什么导致的这个问题！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
