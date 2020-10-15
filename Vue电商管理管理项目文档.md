@@ -2280,7 +2280,43 @@ res的返回值来看
 
 
 
+#### 02 对渲染出的左侧菜单进行格式上的美化
 
+现在有一个问题啊！就是当我的鼠标经过的时候背景颜色是白色，我怎样改过来！
+
+01 对选中的二级菜单进行颜色的替换
+
+```
+   active-text-color="rgb(83,185,255)"
+```
+
+02 对菜单前面的小图标进行替换！
+
+![1602752018846](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602752018846.png)
+
+
+
+03 如何把一级菜单的字体图标渲染出来呢？!
+
+方法：定义一个字体图标对象
+
+![1602753359109](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602753359109.png)
+
+最后我的代码报错了，正在尝试解决中！
+
+```js
+ iconsObj: {
+        125: 'iconfont icon-yonghuguanli',
+        103: 'iconfont icon-wulumuqishigongandashujuguanlipingtai-ico-',
+        101: 'iconfont icon-shangpinguanli',
+        102: 'iconfont icon-dingdanguanli',
+        145: 'iconfont icon-shujutongji'
+      }
+```
+
+ 这个地方有一点问题，就是2.x的版本如果用单引号包裹数值，会报错的，就是上面的错误，记住就可以了！
+
+04 修改文字图标和菜单之间的距离
 
 
 

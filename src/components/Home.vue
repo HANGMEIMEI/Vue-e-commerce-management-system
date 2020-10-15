@@ -19,23 +19,23 @@
         <el-menu
           background-color="rgb(49,54,67)"
           text-color="#fff"
-          active-text-color="#ffd04b"
+          active-text-color="rgb(83,185,255)"
         >
           <!-- 一级菜单！ -->
           <el-submenu :index="item.id + ''" v-for="item in menuList" :key="item.id">
             <!-- 一级菜单的模板区域！ -->
             <template slot="title">
               <!-- 图标 -->
-              <i class="el-icon-location"></i>
+              <i :class="iconsObj[item.id]"></i>
               <!-- 里面的文本！ -->
-              <span>{{item.authName}}</span>
+              <span class="juli">{{item.authName}}</span>
             </template>
 
             <!-- 二级菜单！ -->
             <el-menu-item :index="subItem.id +''" v-for="subItem in item.children" :key="subItem.id">
               <template slot="title">
                 <!-- 图标 -->
-                <i class="el-icon-location"></i>
+                <i class="el-icon-menu"></i>
                 <!-- 里面的文本！ -->
                 <span>{{subItem.authName}}</span>
               </template>
@@ -55,7 +55,15 @@ export default {
   data () {
     return {
       // 左侧菜单数据
-      menuList: []
+      menuList: [],
+      // 定义一个字体图标的对象
+      iconsObj: {
+        125: 'iconfont icon-yonghuguanli',
+        103: 'iconfont icon-wulumuqishigongandashujuguanlipingtai-ico-',
+        101: 'iconfont icon-shangpinguanli',
+        102: 'iconfont icon-dingdanguanli',
+        145: 'iconfont icon-shujutongji'
+      }
     }
   },
   // 整个页面刚一加载的时候就应该立即获取左侧菜单数据
@@ -118,5 +126,14 @@ export default {
 
 .el-main {
   background-color: #eaedf1;
+}
+
+// 修改文字图标和菜单之间的距离
+.iconfont {
+  margin-right: 10px;
+}
+
+.juli {
+  vertical-align: top;
 }
 </style>
