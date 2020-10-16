@@ -2628,6 +2628,18 @@ this.userlist = res.data.userlist
 
 
 
+#### 14 通过作用域插槽的形式自定义操作列表渲染
+
+在进行分配角色的时候还需要按需导入一个插件，别忘了哈！
+
+
+
+![1602856089025](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602856089025.png)
+
+| enterable | 鼠标是否可进入到 tooltip 中 | Boolean | —    | true |
+| --------- | --------------------------- | ------- | ---- | ---- |
+|           |                             |         |      |      |
+
 
 
 

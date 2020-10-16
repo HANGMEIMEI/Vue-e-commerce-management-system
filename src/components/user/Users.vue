@@ -38,7 +38,19 @@
                     </el-switch>
                </template>
            </el-table-column>
-           <el-table-column label="操作"></el-table-column>
+           <el-table-column label="操作" width="300px">
+               <!-- 用 slot-scope="scope" 可以接收作用域插槽的数据 -->
+               <template>
+                   <!-- 修改按钮 -->
+                   <el-button type="primary" icon="el-icon-edit" size="mini">修改</el-button>
+                   <!-- 删除按钮 -->
+                   <el-button type="danger" icon="el-icon-delete" size="mini">删除</el-button>
+                   <!-- 分配角色按钮 -->
+                    <el-tooltip effect="dark" content="分配角色" placement="top" :enterable="false">
+                    <el-button type="warning" icon="el-icon-setting" size="mini">渲染</el-button>
+                    </el-tooltip>
+               </template>
+           </el-table-column>
         </el-table>
         <!-- 用户列表区域 -->
     </el-card>
