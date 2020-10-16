@@ -302,11 +302,13 @@ vue-router.esm.js？4fb5：16 [vue-router]非嵌套路由必须包含前导斜�
 
 
 
+![1602835124159](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602835124159.png)
 
 
 
 
 
+上面出现的问题单纯是因为我的MySQL服务器没有正常开启！
 
 
 

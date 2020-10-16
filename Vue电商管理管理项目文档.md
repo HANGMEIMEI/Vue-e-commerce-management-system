@@ -2393,6 +2393,43 @@ res的返回值来看
 
 
 
+#### 06 点击不同的二级菜单可以在右侧主体区域切换显示不同的组件页面
+
+
+
+![1602834981820](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602834981820.png)
+
+第一步：为整个menu菜单开启路由模式：
+
+
+```
+router=“true”
+```
+
+```html
+  <!-- 侧！边栏菜单区域 -->
+        <el-menu
+          background-color="rgb(49,54,67)"
+          text-color="#fff"
+          active-text-color="rgb(83,185,255)"
+          unique-opened
+          :collapse="isCollapse"
+          :collapse-transition="false"
+          :router="true"
+        >
+```
+
+第二步：接下来通过index属性帮助我们获取跳转地址 subItem.path 但是他并没有以斜线开头 ， 所以再前面加上一个斜线就行了！
+
+
+
+```html
+<!-- 二级菜单！ -->
+            <el-menu-item :index="'/' + subItem.path" v-for="subItem in item.children" :key="subItem.id">
+              <template slot="title">
+```
+
+![1602836023133](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602836023133.png)
 
 
 
@@ -2402,8 +2439,7 @@ res的返回值来看
 
 
 
-
-◆用户管理模块
+## ◆用户管理模块
 
 ## ◆权限管理模块
 
