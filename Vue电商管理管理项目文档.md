@@ -2433,6 +2433,20 @@ router=“true”
 
 
 
+#### 07 用户管理菜单中用户列表的开发
+
+- ​	001 点击用户列表在右侧展示出列表这个组件
+- 第一步创建用户列表这个链接对应的那个的组件页面
+  - 在VUE的项目名中使用组件的方式
+  - 第一步：先创建一个组件
+  - 第二步：在路由的js文件中导入新创建的组件
+  - 第三步：再路由实例中添加新的规则
+- 
+
+```
+  { path: '/home', component: Home, redirect: '/welcome', children: [{ path: '/welcome', component: Welcome }, { path: '/users', component: Users}] }
+```
+
 
 
 

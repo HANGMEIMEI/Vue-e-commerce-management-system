@@ -6,6 +6,8 @@ import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
 // 导入欢迎的组件
 import Welcome from '../components/Welcome.vue'
+// 导入用户列表组件
+import Users from '../components/user/Users.vue'
 
 Vue.use(VueRouter)
 
@@ -15,7 +17,7 @@ const routes = [
   { path: '/login', component: Login },
   // 加入新的主页路由规则
   // path下面的路径和编程导航的路径必须是一样的
-  { path: '/home', component: Home, redirect: '/welcome', children: [{ path: '/welcome', component: Welcome }] }
+  { path: '/home', component: Home, redirect: '/welcome', children: [{ path: '/welcome', component: Welcome }, { path: '/users', component: Users }] }
 ]
 
 const router = new VueRouter({
