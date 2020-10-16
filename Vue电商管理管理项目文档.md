@@ -2601,6 +2601,17 @@ this.userlist = res.data.userlist
 
 
 
+#### 12 为用户表格添加索引列！
+
+![1602852725418](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602852725418.png)
+
+```html
+            <el-table-column label="#" type="index"></el-table-column>
+
+```
+
+
+
 
 
 
