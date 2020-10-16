@@ -316,11 +316,17 @@ vue-router.esm.js？4fb5：16 [vue-router]非嵌套路由必须包含前导斜�
 
 
 
+![1602839484715](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602839484715.png)
+
+## 11 Expected an assignment or function call and instead saw an expression 
+
+需要一个赋值或函数调用，而是看到一个表达式
 
 
 
 
 
+## 12   Unexpected use of comma operator     
 
-
+意外使用逗号运算符
 

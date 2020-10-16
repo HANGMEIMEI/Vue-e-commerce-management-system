@@ -25,6 +25,7 @@
           :collapse="isCollapse"
           :collapse-transition="false"
           :router="true"
+          :default-active="activePath"
         >
           <!-- 一级菜单！ -->
           <el-submenu :index="item.id + ''" v-for="item in menuList" :key="item.id">
@@ -37,7 +38,7 @@
             </template>
 
             <!-- 二级菜单！ -->
-            <el-menu-item :index="'/' + subItem.path" v-for="subItem in item.children" :key="subItem.id">
+            <el-menu-item :index="'/' + subItem.path" v-for="subItem in item.children" :key="subItem.id"  @click="saveNavState('/' + subItem.path)">
               <template slot="title">
                 <!-- 图标 -->
                 <i class="el-icon-menu"></i>
@@ -73,13 +74,16 @@ export default {
         145: 'iconfont icon-shujutongji'
       },
       // 是否折叠 默认代表不折叠！
-      isCollapse: false
+      isCollapse: false,
+      // 被激活的链接地址
+      activePath: ''
     }
   },
   // 整个页面刚一加载的时候就应该立即获取左侧菜单数据
   // 我们在行为区域定义一个生命周期函数
   created () {
     this.getMenuList()
+    this.activePath = window.sessionStorage.getItem('activePath')
   },
   methods: {
     logout: function () {
@@ -101,6 +105,12 @@ export default {
       // console.log(a)
       // 进行isCollapse的取反操作！
       this.isCollapse = !this.isCollapse
+    },
+    // 保存链接的激活状态
+    saveNavState: function (activePath) {
+      window.sessionStorage.setItem('activePath', activePath)
+      console.log('111')
+      this.activePath = activePath
     }
   }
 }

@@ -2449,6 +2449,22 @@ router=“true”
 
 
 
+#### 08 - 解决用户列表的小问题-链接高亮问题！
+
+![1602837395815](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602837395815.png)
+
+
+
+第一步： 
+
+- 给二级事件都绑定一个单击事件，再单击事件中把咱们的path值存储起来！
+
+
+
+
+
+
+
 
 
 
