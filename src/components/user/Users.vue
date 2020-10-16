@@ -21,7 +21,7 @@
             </el-input>
           </el-col>
           <el-col :span="4">
-              <el-button type="primary">添加用户</el-button>
+            <el-button type="primary">添加用户</el-button>
           </el-col>
         </el-row>
         <!-- 搜索与添加区域 -->
@@ -32,7 +32,38 @@
 </template>
 
 <script>
-export default {}
+export default {
+  // data 代表当前的私有数据
+  data () {
+    return {
+      // 获取用户的参数列表对象
+      queryInfo: {
+        query: '',
+        pagenum: 1,
+        pagesize: 2
+      },
+      userlist: [],
+      total: 0
+    }
+  },
+  // 生命周期函数
+  created () {
+    //   发起当前组件的
+    this.getUserList()
+  },
+  // 定义当前组件的一些处理函数
+  methods: {
+    async getUserList () {
+      const { data: res } = await this.$http.get('users', { params: this.queryInfo })
+      if (res.meta.status !== 200) {
+        return this.$message.error('请求用户列表数据失败！')
+      }
+      this.userlist = res.data.userlist
+      this.total = res.data.total
+      console.log(res)
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
