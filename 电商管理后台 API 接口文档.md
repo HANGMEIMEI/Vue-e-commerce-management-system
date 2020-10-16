@@ -158,7 +158,7 @@
     "data": {
         "id": 28,
         "username": "tige1200",
-        "mobile": "test",
+        "mobile": "test", 
         "type": 1,
         "openid": "",
         "email": "test@test.com",

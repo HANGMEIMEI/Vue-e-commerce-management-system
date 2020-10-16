@@ -2507,7 +2507,97 @@ el-col是每一列，列的宽度由span的大小来决定！列于列的间隙�
 
 
 
+```js
+<script>
+export default {
+  // data 代表当前的私有数据
+  data () {
+    return {
+      // 获取用户的参数列表对象
+      queryInfo: {
+        query: '',
+        pagenum: 1,
+        pagesize: 2
+      },
+      userlist: [],
+      total: 0
+    }
+  },
+  // 生命周期函数
+  created () {
+    //   发起当前组件的
+    this.getUserList()
+  },
+  // 定义当前组件的一些处理函数
+  methods: {
+    async getUserList () {
+      const { data: res } = await this.$http.get('users', { params: this.queryInfo })
+      if (res.meta.status !== 200) {
+        return this.$message.error('请求用户列表数据失败！')
+      }
+      this.userlist = res.data.userlist
+      this.total = res.data.total
+      console.log(res)
+    }
+  }
+}
+</script>
+```
 
+
+
+#### 11 渲染用户数据列表
+
+![1602849473766](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602849473766.png)
+
+
+
+当然，之后的组件的使用同样是需要按需导入的哈！
+
+
+
+这儿遇到了一个问题就是用户列表的数据渲染不出来！
+
+![1602850116164](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602850116164.png)
+
+搞定！
+
+```js
+  // 我当时打完了之后就说数据怎么就是渲染不出来，原来我获取到的并不是真正的用户列表，我打错单词了！不过，哥还是通过追根朔源的找到了错误，nice！
+      this.userlist = res.data.users
+```
+
+上面的是我已经改正过来的数据了！
+
+下面是我没改的：
+
+```
+this.userlist = res.data.userlist
+```
+
+事实上从控制台返回回来的数据，中是没有userlist这个数据的，所以页面才会渲染不出数据！
+
+
+
+为什么列表渲染不出数据，很有可能你就是没有把正确的数据赋值给你的数组
+
+![1602851583063](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602851583063.png)
+
+
+
+渲染操作和状态这两列！
+
+为表格添加边框线只需要再父元素上加上border这个属性就可以了！
+
+![1602851947325](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602851947325.png)
+
+为表格添加隔行变色的效果！
+
+![1602851996020](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602851996020.png)
+
+
+
+<u>为表格的父元素添加`stripe`属性可以创建带斑马纹的表格。它接受一个`Boolean`，默认为`false`，设置为`true`即为启用。</u>
 
 
 

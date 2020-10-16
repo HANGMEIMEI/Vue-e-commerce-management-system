@@ -15,3 +15,8 @@ html, body, #app {
     /* 盒子阴影！ */
     box-shadow: 0 0 0 rgba(0, 0, 0, 0.15) !important;
 }
+
+.el-table {
+    margin-top: 5px;
+    font-size: 12px;
+}
