@@ -2463,7 +2463,43 @@ router=“true”
 
 
 
+#### 09 绘制用户列表组件的基本UI结构
 
+
+
+01 头部是一个面包屑的导航区！
+
+![1602840223592](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602840223592.png)
+
+同样的，下一步就是进行组件的按需导入！
+
+再插件的文件夹下面的js文件中进行文件导入！
+
+
+
+```html
+  <!-- 卡片视图区域 -->
+    <el-card>
+      <div>
+        <!-- 搜索与添加区域 -->
+
+        <el-row :gutter="20">
+          <el-col :span="8">
+            <el-input placeholder="请输入内容">
+              <el-button slot="append" icon="el-icon-search"> </el-button>
+            </el-input>
+          </el-col>
+          <el-col :span="4">
+              <el-button type="primary">添加用户</el-button>
+          </el-col>
+        </el-row>
+        <!-- 搜索与添加区域 -->
+      </div>
+    </el-card>
+    <!-- 卡片视图区域 -->
+```
+
+el-col是每一列，列的宽度由span的大小来决定！列于列的间隙可以使用gutter来控制！
 
 
 
