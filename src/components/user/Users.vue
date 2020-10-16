@@ -53,6 +53,22 @@
            </el-table-column>
         </el-table>
         <!-- 用户列表区域 -->
+
+        <!-- 分页区域 -->
+        <!-- :current-page="queryInfo.pagenum" 显示当前页！ -->
+        <!--  :page-size="100" 当前情况下每页显示多少条数据 -->
+        <!--  layout="total, sizes, prev, pager, next, jumper" 用来展示页面上展示多少功能组件 -->
+        <!--  :total="400"> 展示我们有多少条数据 -->
+           <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page="queryInfo.pagenum"
+            :page-sizes="[1, 2, 5, 10]"
+            :page-size="queryInfo.pagesize"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="total">
+            </el-pagination>
+        <!-- 分页区域 -->
     </el-card>
     <!-- 卡片视图区域 -->
   </div>
@@ -66,7 +82,9 @@ export default {
       // 获取用户的参数列表对象
       queryInfo: {
         query: '',
+        // 当前的页数
         pagenum: 1,
+        // 当前每页显示多少条数据
         pagesize: 2
       },
       userlist: [],
@@ -89,6 +107,18 @@ export default {
       this.userlist = res.data.users
       this.total = res.data.total
       console.log(res)
+    },
+    // 监听pagesize 改变的事件(只要切换了页面页数的菜单 就会触发这个事件！)
+    handleSizeChange: function (newSize) {
+      console.log(newSize)
+      this.queryInfo.pagesize = newSize
+      this.getUserList()
+    },
+    // 【监听 页码值 改变的事件】 只要你的页码值发生了切换就会触发这个事件
+    handleCurrentChange: function (newPage) {
+      console.log(newPage)
+      this.queryInfo.pagenum = newPage
+      this.getUserList()
     }
   }
 }
