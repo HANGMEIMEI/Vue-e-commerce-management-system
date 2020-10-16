@@ -344,3 +344,6 @@ vue-router.esm.js？4fb5：16 [vue-router]非嵌套路由必须包含前导斜�
 
 
 
+![1602853569139](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602853569139.png)
+
+上面的错误不影响程序的运行！

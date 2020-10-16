@@ -2612,6 +2612,26 @@ this.userlist = res.data.userlist
 
 
 
+#### 13 改造状态列的显示效果！
+
+
+
+完成这个效果同样需要按需导入插件才可以！
+
+![1602854483232](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602854483232.png)
+
+```html
+  <el-table-column label="状态" prop="mg_state">
+```
+
+完成布置之后可以删掉prop这个属性，不会影响页面的布局！
+
+
+
+
+
+
+
 
 
 
