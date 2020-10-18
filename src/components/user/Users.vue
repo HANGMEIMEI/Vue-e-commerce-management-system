@@ -34,7 +34,7 @@
                <!-- 这儿我有打错了了一个单词 害我找了好一会的错误！ slot-scope="scope" 就是这个 我原来打成了-->
                <template slot-scope="scope">
                    <!-- {{scope.row}} -->
-                   <el-switch v-model="scope.row.mg_state">
+                   <el-switch v-model="scope.row.mg_state" @change="userStateChanged(scope.row)">
                     </el-switch>
                </template>
            </el-table-column>
@@ -119,6 +119,20 @@ export default {
       console.log(newPage)
       this.queryInfo.pagenum = newPage
       this.getUserList()
+    },
+    // 【监听switch 开关状态的改变】switch开关的行为事件
+    async userStateChanged (userinfo) {
+      console.log(userinfo)
+      // 调用API接口 保存switch 开关的状态
+      // 我也搞不懂这儿为什么要使用模板字符串
+      const { data: res } = await this.$http.put(`users/${userinfo.id}/state/${userinfo.mg_state}`)
+      if (res.meta.status !== 200) {
+        // 将当前的开关状态取反
+        userinfo.mg_state = !userinfo.mg_state
+        return this.$message.error('更新用户状态失败！')
+      } else {
+        return this.$message.success('更新用户状态成功！')
+      }
     }
   }
 }

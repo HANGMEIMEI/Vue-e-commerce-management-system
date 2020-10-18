@@ -2654,6 +2654,32 @@ this.userlist = res.data.userlist
 
 
 
+#### 16 实现用户状态的修改
+
+
+
+只需要把用户的状态的更改同步保存到后台的数据库中就可以了！
+
+
+
+第一步：
+
+监听到switch开关状态的改变！从而拿到最新的状态！
+
+第二步：
+
+调用最新的API接口，把这最新的状态保存到数据库就行了！
+
+**![1603019226266](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603019226266.png)**
+
+请求方法：put请求！
+
+
+
+
+
+
+
 
 
 
