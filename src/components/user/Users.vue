@@ -77,6 +77,7 @@
       title="添加用户"
       :visible.sync="addDialogVisible"
       width="50%"
+      @close="addDialogClosed"
       >
       <!-- 内容主体区域 -->
       <el-form :model="addForm" :rules="addFormRules" ref="addFormRef" label-width="70px">
@@ -113,7 +114,6 @@ export default {
     // rule 验证规则
     // value 待校验的value值
     // callback 回调函数
-    /* eslint-disable */
     var checkEmail = (rule, value, callback) => {
       // 用正则实现规则的校验
       // 验证邮箱的正则表达式
@@ -133,9 +133,8 @@ export default {
       if (regPhone.test(value)) {
         return callback()
       }
-      callback(new Error('请输入合法的手机号')) 
+      callback(new Error('请输入合法的手机号'))
     }
-    /* eslint-disable */
 
     return {
       // 获取用户的参数列表对象
@@ -213,6 +212,11 @@ export default {
       } else {
         return this.$message.success('更新用户状态成功！')
       }
+    },
+    // 监听添加用户对话框的关闭事件
+    addDialogClosed () {
+      // 重置整个表单
+      this.$refs.addFormRef.resetFields()
     }
   }
 }
