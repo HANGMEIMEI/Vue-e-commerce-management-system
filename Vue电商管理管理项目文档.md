@@ -2739,9 +2739,53 @@ this.userlist = res.data.userlist
 
 
 
+#### 20 实现自定义校验规则
 
 
 
+```js
+ // 验证邮箱的规则
+    // rule 验证规则
+    // value 待校验的value值
+    // callback 回调函数
+    /* eslint-disable */
+    var checkEmail = (rule, value, callback) => {
+      // 用正则实现规则的校验
+      // 验证邮箱的正则表达式
+      const regEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+      // 判断邮箱的合法性!
+      if (regEmail.test(value)) {
+        return callback()
+      }
+
+      callback(new Error('请输入合法的邮箱！'))
+    }
+    // 校验手机号的验证规则
+    var checkPhone = (rule, value, callback) => {
+      // 验证手机号的正则表达式
+      const regPhone = /^1((3[\d])|(4[5,6,7,9])|(5[0-3,5-9])|(6[5-7])|(7[0-8])|(8[\d])|(9[1,8,9]))\d{8}$/
+      // 判断手机的合法性！
+      if (regPhone.test(value)) {
+        return callback()
+      }
+      callback(new Error('请输入合法的手机号')) 
+    }
+```
+
+```js
+  // 添加表单的验证规则对象
+      addFormRules: {
+        username: [
+          { required: true, message: '请输入用户名', trigger: 'blur' }, { min: 3, max: 10, message: '用户名的长度在3~10个字符之间', trigger: 'blur' }
+        ],
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' },
+          { min: 6, max: 15, message: '密码的长度在6~15个字符之间', trigger: 'blur' }],
+        email: [{ required: true, message: '请输入你的邮箱', trigger: 'blur' }, { validator: checkEmail, trigger: 'blur' }],
+        phone: [
+          { required: true, message: '请输入你的手机号', trigger: 'blur' }, { validator: checkPhone, trigger: 'blur' }]
+      }
+```
 
 
 
