@@ -2678,6 +2678,43 @@ this.userlist = res.data.userlist
 
 
 
+#### 17 实现搜索的功能!
+
+01 实现数据的双向绑定！
+
+第一步：
+
+​	为文本框绑定数据
+
+第二步：
+
+​	为按钮绑定点击事件！ 在事件的处理函数中调用getUserList
+
+```html
+ <el-input placeholder="请输入内容" v-model="queryInfo.query">
+              <el-button slot="append" icon="el-icon-search" @click="getUserList"> </el-button>
+            </el-input>
+```
+
+优化：
+
+为输入框提供一个清空的按钮！
+
+![1603098144848](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603098144848.png)
+
+
+
+清空文本框重置所有的数据！
+
+![1603098246402](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603098246402.png)
+
+```html
+ <el-input placeholder="请输入内容" v-model="queryInfo.query" clearable @clear="getUserList">-
+     
+              <el-button slot="append" icon="el-icon-search" @click="getUserList"> </el-button>
+            </el-input>
+```
+
 
 
 
