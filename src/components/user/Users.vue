@@ -74,12 +74,25 @@
     <!-- Dialog 添加用户模态对话框区域 -->
     <!-- title就是模态对话框的 标题！   :visible.sync 是一个属性绑定， 用来控制模态对话框的显示与隐藏! 需要把他绑定到一个布尔值身上!   :before-close 在对话框关闭之前会触发这个事件   -->
     <el-dialog
-      title="提示"
+      title="添加用户"
       :visible.sync="addDialogVisible"
       width="50%"
       >
       <!-- 内容主体区域 -->
-      <span>这是一段信息</span>
+      <el-form :model="addForm" :rules="addFormRules" ref="addFormRef" label-width="70px">
+      <el-form-item label="用户名" prop="username">
+        <el-input v-model="addForm.username"></el-input>
+      </el-form-item>
+      <el-form-item label="密码" prop="password">
+        <el-input v-model="addForm.password"></el-input>
+      </el-form-item>
+      <el-form-item label="邮箱" prop="email">
+        <el-input v-model="addForm.email"></el-input>
+      </el-form-item>
+      <el-form-item label="手机号" prop="phone">
+        <el-input v-model="addForm.phone"></el-input>
+      </el-form-item>
+      </el-form>
       <!-- 对话框的底部区域 -->
       <span slot="footer" class="dialog-footer">
         <!-- 只要点击了取消或者确定的按钮 都会关闭 对话框! -->
@@ -108,7 +121,27 @@ export default {
       userlist: [],
       total: 0,
       // 控制添加用户对话框的显示与隐藏
-      addDialogVisible: false
+      addDialogVisible: false,
+      // 添加用户的表单数据
+      addForm: {
+        username: '',
+        password: '',
+        email: '',
+        phone: ''
+      },
+      // 添加表单的验证规则对象
+      addFormRules: {
+        username: [
+          { required: true, message: '请输入用户名', trigger: 'blur' }, { min: 3, max: 10, message: '用户名的长度在3~10个字符之间', trigger: 'blur' }
+        ],
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' },
+          { min: 6, max: 15, message: '密码的长度在6~15个字符之间', trigger: 'blur' }],
+        email: [{ required: true, message: '请输入你的邮箱', trigger: 'blur' }],
+        phone: [
+          { required: true, message: '请输入你的手机号', trigger: 'blur' },
+          { min: 11, max: 11, message: '手机号的长度为11位', trigger: 'blur' }]
+      }
     }
   },
   // 生命周期函数

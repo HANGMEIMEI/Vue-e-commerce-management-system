@@ -2731,6 +2731,24 @@ this.userlist = res.data.userlist
 
 
 
+#### 19 实现在添加用户的对话框中渲染一个添加用户的表单
+
+![1603106334425](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603106334425.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## ◆用户管理模块
 
 ## ◆权限管理模块
