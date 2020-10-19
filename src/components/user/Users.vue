@@ -19,7 +19,7 @@
             </el-input>
           </el-col>
           <el-col :span="4">
-            <el-button type="primary">添加用户</el-button>
+            <el-button type="primary" @click="addDialogVisible = true">添加用户</el-button>
           </el-col>
         </el-row>
         <!-- 搜索与添加区域 -->
@@ -71,6 +71,24 @@
         <!-- 分页区域 -->
     </el-card>
     <!-- 卡片视图区域 -->
+    <!-- Dialog 添加用户模态对话框区域 -->
+    <!-- title就是模态对话框的 标题！   :visible.sync 是一个属性绑定， 用来控制模态对话框的显示与隐藏! 需要把他绑定到一个布尔值身上!   :before-close 在对话框关闭之前会触发这个事件   -->
+    <el-dialog
+      title="提示"
+      :visible.sync="addDialogVisible"
+      width="50%"
+      >
+      <!-- 内容主体区域 -->
+      <span>这是一段信息</span>
+      <!-- 对话框的底部区域 -->
+      <span slot="footer" class="dialog-footer">
+        <!-- 只要点击了取消或者确定的按钮 都会关闭 对话框! -->
+        <el-button @click="addDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="addDialogVisible = false">确 定</el-button>
+      </span>
+      <!-- 对话框的底部区域 -->
+    </el-dialog>
+    <!-- Dialog 添加用户模态对话框区域 -->
   </div>
 </template>
 
@@ -88,7 +106,9 @@ export default {
         pagesize: 2
       },
       userlist: [],
-      total: 0
+      total: 0,
+      // 控制添加用户对话框的显示与隐藏
+      addDialogVisible: false
     }
   },
   // 生命周期函数
