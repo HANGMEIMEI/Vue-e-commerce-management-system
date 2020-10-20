@@ -98,7 +98,7 @@
       <span slot="footer" class="dialog-footer">
         <!-- 只要点击了取消或者确定的按钮 都会关闭 对话框! -->
         <el-button @click="addDialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="addDialogVisible = false">确 定</el-button>
+        <el-button type="primary" @click="addUser">确 定</el-button>
       </span>
       <!-- 对话框的底部区域 -->
     </el-dialog>
@@ -217,6 +217,16 @@ export default {
     addDialogClosed () {
       // 重置整个表单
       this.$refs.addFormRef.resetFields()
+    },
+    // 点击按钮， 添加新用户
+    addUser () {
+      // 表单的预校验也是要拿到表单的实例对象 【 this.$refs.addFormRef】
+      this.$refs.addFormRef.validate(valid => {
+        console.log(valid) // true
+        if (!valid) return
+        // 如果校验通过， 那么就发起真正的网络请求！
+        
+      })
     }
   }
 }
