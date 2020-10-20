@@ -2806,9 +2806,15 @@ this.userlist = res.data.userlist
 
 #### 23 发起网络请求，从而添加一个新用户
 
+中间还是发生了一个错误
 
+```js
+   const { data: res } = await this.$http.post('users', this.addForm)
+```
 
+我把上面的users写错了！
 
+还是不够仔细！
 
 
 

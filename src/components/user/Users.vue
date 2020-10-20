@@ -225,7 +225,7 @@ export default {
         console.log(valid) // true
         if (!valid) return
         // 如果校验通过， 那么就发起真正的网络请求！
-        const { data: res } = await this.$http.post('uesrs', this.addForm)
+        const { data: res } = await this.$http.post('users', this.addForm)
         if (res.meta.status !== 201) {
           this.$message.error('添加用户失败！')
         }
