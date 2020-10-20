@@ -110,7 +110,21 @@
       :visible.sync="editDialogVisible"
       width="50%">
       <!-- 内容主体区域 -->
-      <span>这是一段信息</span>
+      <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="70px">
+        <el-form-item label="用户名">
+          <el-input v-model="editForm.username" disabled></el-input>
+        </el-form-item>
+        <!-- 邮箱 -->
+           <el-form-item label="邮箱" prop="email">
+          <el-input v-model="editForm.email"></el-input>
+        </el-form-item>
+        <!-- 手机 -->
+           <el-form-item label="手机" prop="mobile">
+          <el-input v-model="editForm.mobile"></el-input>
+        </el-form-item>
+      </el-form>
+      <!-- 内容主体区域 -->
+
       <span slot="footer" class="dialog-footer">
         <el-button @click="editDialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="editDialogVisible = false">确 定</el-button>
@@ -140,7 +154,7 @@ export default {
       callback(new Error('请输入合法的邮箱！'))
     }
     // 校验手机号的验证规则
-    var checkmobile = (rule, value, callback) => {
+    var checkMobile = (rule, value, callback) => {
       // 验证手机号的正则表达式
       const regmobile = /^1((3[\d])|(4[5,6,7,9])|(5[0-3,5-9])|(6[5-7])|(7[0-8])|(8[\d])|(9[1,8,9]))\d{8}$/
       // 判断手机的合法性！
@@ -180,12 +194,21 @@ export default {
           { min: 6, max: 15, message: '密码的长度在6~15个字符之间', trigger: 'blur' }],
         email: [{ required: true, message: '请输入你的邮箱', trigger: 'blur' }, { validator: checkEmail, trigger: 'blur' }],
         mobile: [
-          { required: true, message: '请输入你的手机号', trigger: 'blur' }, { validator: checkmobile, trigger: 'blur' }]
+          { required: true, message: '请输入你的手机号', trigger: 'blur' }, { validator: checkMobile, trigger: 'blur' }]
       },
       // 控制修改用户对话框的显示与隐藏
       editDialogVisible: false,
       // 查询到的用户信息对象
-      editForm: {}
+      editForm: {},
+      // 修改表单的验证规则对象
+      editFormRules: {
+        email: [
+          { required: true, message: '请输入修改后邮箱', trigger: 'blur' }, { validator: checkEmail, trigger: 'blur' }
+        ],
+        mobile: [
+          { required: true, message: '请输入修改后的手机号', trigger: 'blur' }, { validator: checkMobile, trigger: 'blur' }
+        ]
+      }
     }
   },
   // 生命周期函数
