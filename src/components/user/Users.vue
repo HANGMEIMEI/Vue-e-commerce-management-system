@@ -90,8 +90,8 @@
       <el-form-item label="邮箱" prop="email">
         <el-input v-model="addForm.email"></el-input>
       </el-form-item>
-      <el-form-item label="手机号" prop="phone">
-        <el-input v-model="addForm.phone"></el-input>
+      <el-form-item label="手机号" prop="mobile">
+        <el-input v-model="addForm.mobile"></el-input>
       </el-form-item>
       </el-form>
       <!-- 对话框的底部区域 -->
@@ -126,11 +126,11 @@ export default {
       callback(new Error('请输入合法的邮箱！'))
     }
     // 校验手机号的验证规则
-    var checkPhone = (rule, value, callback) => {
+    var checkmobile = (rule, value, callback) => {
       // 验证手机号的正则表达式
-      const regPhone = /^1((3[\d])|(4[5,6,7,9])|(5[0-3,5-9])|(6[5-7])|(7[0-8])|(8[\d])|(9[1,8,9]))\d{8}$/
+      const regmobile = /^1((3[\d])|(4[5,6,7,9])|(5[0-3,5-9])|(6[5-7])|(7[0-8])|(8[\d])|(9[1,8,9]))\d{8}$/
       // 判断手机的合法性！
-      if (regPhone.test(value)) {
+      if (regmobile.test(value)) {
         return callback()
       }
       callback(new Error('请输入合法的手机号'))
@@ -154,7 +154,7 @@ export default {
         username: '',
         password: '',
         email: '',
-        phone: ''
+        mobile: ''
       },
       // 添加表单的验证规则对象
       addFormRules: {
@@ -165,8 +165,8 @@ export default {
           { required: true, message: '请输入密码', trigger: 'blur' },
           { min: 6, max: 15, message: '密码的长度在6~15个字符之间', trigger: 'blur' }],
         email: [{ required: true, message: '请输入你的邮箱', trigger: 'blur' }, { validator: checkEmail, trigger: 'blur' }],
-        phone: [
-          { required: true, message: '请输入你的手机号', trigger: 'blur' }, { validator: checkPhone, trigger: 'blur' }]
+        mobile: [
+          { required: true, message: '请输入你的手机号', trigger: 'blur' }, { validator: checkmobile, trigger: 'blur' }]
       }
     }
   },
@@ -221,11 +221,19 @@ export default {
     // 点击按钮， 添加新用户
     addUser () {
       // 表单的预校验也是要拿到表单的实例对象 【 this.$refs.addFormRef】
-      this.$refs.addFormRef.validate(valid => {
+      this.$refs.addFormRef.validate(async valid => {
         console.log(valid) // true
         if (!valid) return
         // 如果校验通过， 那么就发起真正的网络请求！
-        
+        const { data: res } = await this.$http.post('uesrs', this.addForm)
+        if (res.meta.status !== 201) {
+          this.$message.error('添加用户失败！')
+        }
+        this.$message.success('添加用户成功！')
+        // 隐藏添加用户的对话框
+        this.addDialogVisible = false
+        // 刷新用户的列表【重新获取用户列表的数据】
+        this.getUserList()
       })
     }
   }
