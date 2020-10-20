@@ -40,9 +40,9 @@
            </el-table-column>
            <el-table-column label="操作" width="300px">
                <!-- 用 slot-scope="scope" 可以接收作用域插槽的数据 -->
-               <template>
+               <template slot-scope="scope">
                    <!-- 修改按钮 -->
-                   <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog()">修改</el-button>
+                   <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog(scope.row.id)">修改</el-button>
                    <!-- 删除按钮 -->
                    <el-button type="danger" icon="el-icon-delete" size="mini">删除</el-button>
                    <!-- 分配角色按钮 -->
@@ -116,7 +116,6 @@
         <el-button type="primary" @click="editDialogVisible = false">确 定</el-button>
       </span>
     </el-dialog>
-
     <!-- 修改用户的对话框 -->
   </div>
 </template>
@@ -184,7 +183,9 @@ export default {
           { required: true, message: '请输入你的手机号', trigger: 'blur' }, { validator: checkmobile, trigger: 'blur' }]
       },
       // 控制修改用户对话框的显示与隐藏
-      editDialogVisible: false
+      editDialogVisible: false,
+      // 查询到的用户信息对象
+      editForm: {}
     }
   },
   // 生命周期函数
@@ -254,7 +255,13 @@ export default {
       })
     },
     // 展示编辑用户的对话框
-    showEditDialog () {
+    async showEditDialog (id) {
+      console.log(id)
+      const { data: res } = await this.$http.get('users/' + id)
+      if (res.meta.status !== 200) {
+        return this.$message.error('查询用户的信息失败！')
+      }
+      this.editForm = res.data
       this.editDialogVisible = true
     }
   }

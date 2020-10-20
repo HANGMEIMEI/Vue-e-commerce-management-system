@@ -2824,6 +2824,20 @@ this.userlist = res.data.userlist
 
 
 
+#### 25 在修改用户的信息中，根据ID查询用户的信息！
+
+![1603195723930](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603195723930.png)
+
+
+
+
+
+
+
+
+
+
+
 ## ◆用户管理模块
 
 ## ◆权限管理模块
