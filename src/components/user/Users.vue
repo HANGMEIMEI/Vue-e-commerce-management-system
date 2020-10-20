@@ -42,7 +42,7 @@
                <!-- 用 slot-scope="scope" 可以接收作用域插槽的数据 -->
                <template>
                    <!-- 修改按钮 -->
-                   <el-button type="primary" icon="el-icon-edit" size="mini">修改</el-button>
+                   <el-button type="primary" icon="el-icon-edit" size="mini" @click="showEditDialog()">修改</el-button>
                    <!-- 删除按钮 -->
                    <el-button type="danger" icon="el-icon-delete" size="mini">删除</el-button>
                    <!-- 分配角色按钮 -->
@@ -103,6 +103,21 @@
       <!-- 对话框的底部区域 -->
     </el-dialog>
     <!-- Dialog 添加用户模态对话框区域 -->
+
+    <!-- 修改用户的对话框 -->
+    <el-dialog
+      title="修改用户"
+      :visible.sync="editDialogVisible"
+      width="50%">
+      <!-- 内容主体区域 -->
+      <span>这是一段信息</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="editDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="editDialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
+
+    <!-- 修改用户的对话框 -->
   </div>
 </template>
 
@@ -167,7 +182,9 @@ export default {
         email: [{ required: true, message: '请输入你的邮箱', trigger: 'blur' }, { validator: checkEmail, trigger: 'blur' }],
         mobile: [
           { required: true, message: '请输入你的手机号', trigger: 'blur' }, { validator: checkmobile, trigger: 'blur' }]
-      }
+      },
+      // 控制修改用户对话框的显示与隐藏
+      editDialogVisible: false
     }
   },
   // 生命周期函数
@@ -235,6 +252,10 @@ export default {
         // 刷新用户的列表【重新获取用户列表的数据】
         this.getUserList()
       })
+    },
+    // 展示编辑用户的对话框
+    showEditDialog () {
+      this.editDialogVisible = true
     }
   }
 }
