@@ -2860,7 +2860,7 @@ this.userlist = res.data.userlist
 
 
 
-#### 30 实现删除用户的操作
+#### 30 实现弹出删除用户的提示框
 
 ![1603271249307](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603271249307.png)
 
@@ -2872,7 +2872,7 @@ this.userlist = res.data.userlist
 
 
 
-
+#### 31 实现删除用户的操作！
 
 
 

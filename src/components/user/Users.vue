@@ -329,6 +329,13 @@ export default {
         return this.$message.info('已经取消了删除的操作！')
       }
       console.log('完成删除操作')
+      const { data: res } = await this.$http.delete('users/' + id)
+      if (res.meta.status !== 200) {
+        return this.$message.error('删除用户信息失败！')
+      }
+      // 成功之后， 刷新数据列表！
+      this.getUserList()
+      return this.$message.success('删除用户信息成功！')
     }
   }
 }
