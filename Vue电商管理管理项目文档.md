@@ -2892,6 +2892,26 @@ git commit -m <!-- 将修改之后的代码提交到仓库中！-->
 
 
 
+切换分支：将当前的home分支切换到develop上
+
+```git
+ git checkout develop
+
+```
+
+将当前的仓库合并到开发分支上
+
+```git
+git merge home
+```
+
+再把develop上的代码推送到远程仓库上！
+
+```
+ git push vue-shop2 develop
+
+```
+
 
 
 ## ◆用户管理模块
