@@ -2918,9 +2918,9 @@ git merge home
 
 
 
+### 1 开发权限列表对应的路由规则
 
-
-
+![1603280477038](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603280477038.png)
 
 
 
