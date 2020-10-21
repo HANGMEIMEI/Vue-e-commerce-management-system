@@ -2862,6 +2862,18 @@ this.userlist = res.data.userlist
 
 #### 30 实现删除用户的操作
 
+![1603271249307](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603271249307.png)
+
+![1603271282440](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603271282440.png)
+
+这次用到的组件要进行全局挂载才行！
+
+
+
+
+
+
+
 
 
 
