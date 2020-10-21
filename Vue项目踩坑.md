@@ -374,3 +374,23 @@ lvhang () {
 }
 ```
 
+、
+
+
+
+
+
+
+
+## 13 error  Unnecessary return statement 
+
+在项目中遇到上面的报错信息：
+
+说return 是不必要的：解决方法：
+
+```
+if (!valid) return false
+```
+
+在return的后面加上false
+

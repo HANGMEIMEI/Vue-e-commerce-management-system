@@ -127,7 +127,7 @@
 
       <span slot="footer" class="dialog-footer">
         <el-button @click="editDialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="editDialogVisible = false">确 定</el-button>
+        <el-button type="primary" @click="editUserInfo">确 定</el-button>
       </span>
     </el-dialog>
     <!-- 修改用户的对话框 -->
@@ -291,6 +291,25 @@ export default {
     editDialogClosed () {
       // 还是要拿到表单的实例对象
       this.$refs.editFormRef.resetFields()
+    },
+    // 修改用户并提交【提交表单前的预校验的操作】
+    editUserInfo () {
+      // 对表单进行预验证
+      this.$refs.editFormRef.validate(async valid => {
+        console.log(valid)
+        if (!valid) return false
+        // 验证成功就发送修改用户的数据请求！
+        const { data: res } = await this.$http.put('users/' + this.editForm.id, { email: this.addForm.email, mobile: this.editForm.mobile })
+        if (res.meta.status !== 200) {
+          return this.$message.error('更新用户信息失败！')
+        }
+        // 关闭对话框
+        this.editDialogVisible = false
+        // 刷新数据列表
+        this.getUserList()
+        // 提示修改成功
+        this.$message.success('更新用户列表成功！')
+      })
     }
   }
 }
