@@ -2978,6 +2978,18 @@ import Authority from '../components/authority/Authority.vue'
 
 
 
+### 3 请求权限列表的数据获取
+
+![1603368037874](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603368037874.png)
+
+
+
+
+
+
+
+
+
 
 
 

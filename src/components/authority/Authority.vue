@@ -16,7 +16,30 @@
 
 <script>
 // 行为
-export default {}
+export default {
+  data () {
+    return {
+      // 所有的权限列表
+      authorityList: []
+    }
+  },
+  // 在生命周期函数中发起数据请求
+  created () {
+    // 获取所有的权限列表
+    this.getAuthorityList()
+  },
+  methods: {
+    // 获取权限列表
+    async getAuthorityList () {
+      const { data: res } = await this.$http.get('rights/list')
+      if (res.meta.status !== 200) {
+        return this.$message.error('获取权限列表失败！')
+      }
+      this.authorityList = res.data
+      console.log(this.authorityList)
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
