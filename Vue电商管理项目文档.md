@@ -3004,6 +3004,40 @@ import Authority from '../components/authority/Authority.vue'
 
 
 
+#### 01 实现角色列表路由的切换
+
+新建角色组件
+
+```vue、
+<template>
+  <div>
+    <h3>角色列表页面</h3>
+  </div>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style lang="less" scoped>
+</style>
+
+```
+
+![1603370375773](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603370375773.png)
+
+
+
+通过路由形式将上面的图片中的信息加载出来！
+
+
+
+
+
+
+
+
+
 
 
 

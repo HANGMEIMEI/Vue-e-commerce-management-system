@@ -10,6 +10,8 @@ import Welcome from '../components/Welcome.vue'
 import Users from '../components/user/Users.vue'
 // 导入头部权限组件页面
 import Authority from '../components/authority/Authority.vue'
+// 导入角色列表组件
+import Roles from '../components/authority/Roles.vue'
 
 Vue.use(VueRouter)
 
@@ -19,7 +21,7 @@ const routes = [
   { path: '/login', component: Login },
   // 加入新的主页路由规则
   // path下面的路径和编程导航的路径必须是一样的
-  { path: '/home', component: Home, redirect: '/welcome', children: [{ path: '/welcome', component: Welcome }, { path: '/users', component: Users }, { path: '/rights', component: Authority }] }
+  { path: '/home', component: Home, redirect: '/welcome', children: [{ path: '/welcome', component: Welcome }, { path: '/users', component: Users }, { path: '/rights', component: Authority }, { path: '/roles', component: Roles }] }
 ]
 
 const router = new VueRouter({
