@@ -2920,7 +2920,59 @@ git merge home
 
 ### 1 开发权限列表对应的路由规则
 
-![1603280477038](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603280477038.png)
+![1603364739074](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603364739074.png)
+
+
+
+第一步： 创建对应的组件，
+
+再组件的文件夹中新建一个Authority的文件夹，我们所有的和权限相关的组件都要放在这个文件夹下面！
+
+​	002 再在Authority的文件夹下面新建一个Authority的组件！
+
+![1603365502633](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603365502633.png)
+
+```vue
+<template>
+    <div>
+        <h3>权限列表组件页面！</h3>
+    </div>
+</template>
+
+<script>
+// 行为
+export default {
+    
+}
+</script>
+
+<style lang="less" scoped>
+
+</style>
+```
+
+接下来通过路由的形式加载出来！
+
+在router文件夹下面的js文件中导入权限头部组件页面
+
+```js
+// 导入头部权限组件页面
+import Authority from '../components/authority/Authority.vue'
+```
+
+
+
+
+
+第二步： 定义对应 的路由规则！ 从而把组件展示出来！
+
+```js
+ { path: '/rights', component: Authority }
+```
+
+![1603366195867](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603366195867.png)
+
+
 
 
 
