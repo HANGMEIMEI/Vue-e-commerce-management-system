@@ -2918,7 +2918,7 @@ git merge home
 
 
 
-### 1 开发权限列表对应的路由规则
+#### 1 开发权限列表对应的路由规则
 
 ![1603364739074](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603364739074.png)
 
@@ -2974,11 +2974,11 @@ import Authority from '../components/authority/Authority.vue'
 
 
 
-### 2 绘制权限列表页面的基本的布局
+#### 2 绘制权限列表页面的基本的布局
 
 
 
-### 3 请求权限列表的数据获取
+#### 3 请求权限列表的数据获取
 
 ![1603368037874](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603368037874.png)
 
@@ -2986,7 +2986,7 @@ import Authority from '../components/authority/Authority.vue'
 
 
 
-
+#### 4 获取权限列表数据-渲染一个table表格！【权限列表表格的渲染】
 
 
 
