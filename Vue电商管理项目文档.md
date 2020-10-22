@@ -2918,6 +2918,10 @@ git merge home
 
 
 
+### 1.1 权限列表页面的整体布局
+
+
+
 #### 1 开发权限列表对应的路由规则
 
 ![1603364739074](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603364739074.png)
@@ -2987,6 +2991,16 @@ import Authority from '../components/authority/Authority.vue'
 
 
 #### 4 获取权限列表数据-渲染一个table表格！【权限列表表格的渲染】
+
+
+
+### 2.1权限管理业务分析
+
+通过权限管理模块控制不同的用户可以进行哪些操作，具体可以通过角色的方式进行控制，即每个用户分配一个特定的角色，角色包括不同的功能权限。
+
+![1603369951079](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603369951079.png)
+
+
 
 
 
