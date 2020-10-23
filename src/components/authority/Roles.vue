@@ -17,6 +17,23 @@
       </el-row>
       <!-- 添加角色按钮区域 -->
       <!-- 角色列表区域 -->
+      <el-table :data="rolesList" border stripe>
+          <!-- 展开列 -->
+          <el-table-column type="expand"></el-table-column>
+          <!-- 索引列 -->
+          <el-table-column type="index"></el-table-column>
+          <el-table-column label="角色名称" prop="roleName"></el-table-column>
+          <el-table-column label="角色描述" prop="roleDesc"></el-table-column>
+          <!-- 操作这一列需要用到作用域插槽！ -->
+          <el-table-column label="操作" width="285px">
+                <!-- eslint-disable-next-line  -->
+              <template slot-scope="scope">
+                  <el-button size="mini" type="primary" icon="el-icon-edit">编辑</el-button>
+                  <el-button size="mini" type="danger" icon="el-icon-delete">删除</el-button>
+                  <el-button size="mini" type="warning" icon="el-icon-setting">分配权限</el-button>
+              </template>
+          </el-table-column>
+      </el-table>
       <!-- 角色列表区域 -->
     </el-card>
     <!-- 卡片视图区域 -->

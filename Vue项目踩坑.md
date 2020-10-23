@@ -402,9 +402,27 @@ if (!valid) return false
 
 
 
+## 如何屏蔽ESlint 语法的警告问题！
 
+ eslint-disable-next-line
 
-
+> **（三）命令的使用**
+>
+> 　　　在代码中我们可以利用命令来屏蔽一些语法规范的检查，如 eslint-disable-next-line和eslint-disable，注意了这些命令必须要采用注释的方式使用。
+>
+> 　　（1）eslint-disable命令的使用
+>
+> 　　eslint-disable命令表示会将该命令所在行后面的所有文件进行语法规范检查屏蔽，若遇到eslint-enable命令就会结束屏蔽。
+>
+> - 若想屏蔽整个文档的语法规范检查，那么在文件的开头直接使用eslint-disable命令，在Vue文件的template标签中这样使用：<!-- eslint-disable -->，在script标签中这样使用： /* eslint-disable */
+> - 若想屏蔽某段代码的语法规范检查，那么就结合eslint-disable和eslint-enable命令，在Vue文件的template标签中这样使用：<!-- eslint-disable --> 和 <!-- eslint-enable>两个命令将某段代码块包住，在script标签中这样使用：/* eslint-disable */ 和 /* eslint-enable */ 两个命令将某段代码块包住。
+>
+> 　　（2）eslint-disable-next-line命令的使用
+>
+> 　　eslint-disable-next-line命令表示该命令所在行的下一行的代码规范被屏蔽检查了。
+>
+> - 在Vue文件的template标签中这样使用：<!-- eslint-disable-next-line -->
+> - 在Vue文件的script标签中这样使用： // eslint-disable-next-line
 
 
 
