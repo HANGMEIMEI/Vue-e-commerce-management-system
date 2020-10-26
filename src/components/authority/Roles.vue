@@ -34,16 +34,21 @@
                 <el-col :span="19">
                   <!-- 通过for 循环 嵌套 渲染二级权限  -->
                 <!-- eslint-disable-next-line  -->
-                  <el-row :class="[i2 === 0 ? '' : 'bdtop']" v-for="(item2, i2) in item1.children" :key="item2.id">
+                  <el-row :class="[i2 === 0 ? '' : 'bdtop']" v-for="(item2, i2) in item1.children" :key="item2.id" :span="6">
                     <!-- 左边的列  渲染二级权限-->
-                    <el-col>
+                    <el-col :span="6">
                       <el-tag type="success">
                         {{item2.authName}}
                       </el-tag>
                   <i class="el-icon-caret-right"></i>
                     </el-col>
                     <!-- 右边的列！渲染三级权限 -->
-                    <el-col></el-col>
+                    <el-col :span="18">
+                <!-- eslint-disable-next-line  -->
+                      <el-tag type="warning" v-for="(item3, i3) in item2.children" :key="item3">
+                        {{item3.authName}}
+                      </el-tag>
+                    </el-col>
                   </el-row>
                 </el-col>
               </el-row>
