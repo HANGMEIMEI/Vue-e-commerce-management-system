@@ -31,7 +31,21 @@
                   <i class="el-icon-caret-right"></i>
                 </el-col>
                 <!-- 渲染二级和三级权限 -->
-                <el-col :span="19"></el-col>
+                <el-col :span="19">
+                  <!-- 通过for 循环 嵌套 渲染二级权限  -->
+                <!-- eslint-disable-next-line  -->
+                  <el-row :class="[i2 === 0 ? '' : 'bdtop']" v-for="(item2, i2) in item1.children" :key="item2.id">
+                    <!-- 左边的列  渲染二级权限-->
+                    <el-col>
+                      <el-tag type="success">
+                        {{item2.authName}}
+                      </el-tag>
+                  <i class="el-icon-caret-right"></i>
+                    </el-col>
+                    <!-- 右边的列！渲染三级权限 -->
+                    <el-col></el-col>
+                  </el-row>
+                </el-col>
               </el-row>
               <pre>
               {{scope.row}}
