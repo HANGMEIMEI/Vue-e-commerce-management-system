@@ -25,7 +25,7 @@
               <el-row :class="['bdbottom', i1 === 0 ? 'bdtop' : '', 'vcenter']" v-for="(item1, i1) in scope.row.children" :key="item1.id">
                 <!-- 渲染一级权限 -->
                 <el-col :span="5">
-                  <el-tag>
+                  <el-tag closable @close="removeRightById(scope.row, item1.id)">
                     {{item1.authName}}
                   </el-tag>
                   <i class="el-icon-caret-right"></i>
@@ -37,7 +37,7 @@
                   <el-row :class="[i2 === 0 ? '' : 'bdtop', 'vcenter']" v-for="(item2, i2) in item1.children" :key="item2.id" :span="6">
                     <!-- 左边的列  渲染二级权限-->
                     <el-col :span="6">
-                      <el-tag type="success">
+                      <el-tag type="success" closable @close="removeRightById(scope.row, item2.id)">
                         {{item2.authName}}
                       </el-tag>
                   <i class="el-icon-caret-right"></i>
@@ -45,7 +45,7 @@
                     <!-- 右边的列！渲染三级权限 -->
                     <el-col :span="18">
                 <!-- eslint-disable-next-line  -->
-                      <el-tag type="warning" v-for="(item3, i3) in item2.children" :key="item3">
+                      <el-tag type="warning" v-for="(item3, i3) in item2.children" :key="item3" closable @close="removeRightById(scope.row, item3.id)">
                         {{item3.authName}}
                       </el-tag>
                     </el-col>
@@ -97,6 +97,28 @@ export default {
       }
       this.rolesList = res.data
       console.log(this.rolesList)
+    },
+    // 根据ID删除对应的权限！
+    async removeRightById (role, rightId) {
+    // 弹框提示用户是否要删除！
+      const confirmResult = await this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).catch(err => err)
+      if (confirmResult !== 'confirm') {
+        return this.$message.info('您取消了删除！')
+      }
+      console.log('您确认了删除！')
+      // 发起删除的业务请求！
+      const { data: res } = await this.$http.delete(`roles/${role.id}/rights/${rightId}`)
+      if (res.meta.status !== 200) {
+        this.$message.error('删除失败！')
+      }
+      // 不建议调用下面的事件， 因为他会让页面再一次进行完整的渲染！
+      // this.getRolesList()
+      // 把删除了权限的页面直接赋值给角色页面， 就不用重新渲染页面了!， 这是提升用户体验性的操作!
+      role.children = res.data
     }
   }
 }

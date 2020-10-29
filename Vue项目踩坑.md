@@ -426,3 +426,21 @@ if (!valid) return false
 
 
 
+![1603973611661](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue项目踩坑.assets\1603973611661.png)
+
+
+
+
+
+在做删除角色指定权限的时候， Vue出现上面的警告！
+
+但是程序可以运行， 逻辑也没有任何的问题！
+
+
+
+
+
+
+
+
+
