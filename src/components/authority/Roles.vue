@@ -22,7 +22,7 @@
           <el-table-column type="expand">
             <template slot-scope="scope">
               <!-- 放置一个栅格系统的布局组件 -->
-              <el-row :class="['bdbottom', i1 === 0 ? 'bdtop' : '']" v-for="(item1, i1) in scope.row.children" :key="item1.id">
+              <el-row :class="['bdbottom', i1 === 0 ? 'bdtop' : '', 'vcenter']" v-for="(item1, i1) in scope.row.children" :key="item1.id">
                 <!-- 渲染一级权限 -->
                 <el-col :span="5">
                   <el-tag>
@@ -34,7 +34,7 @@
                 <el-col :span="19">
                   <!-- 通过for 循环 嵌套 渲染二级权限  -->
                 <!-- eslint-disable-next-line  -->
-                  <el-row :class="[i2 === 0 ? '' : 'bdtop']" v-for="(item2, i2) in item1.children" :key="item2.id" :span="6">
+                  <el-row :class="[i2 === 0 ? '' : 'bdtop', 'vcenter']" v-for="(item2, i2) in item1.children" :key="item2.id" :span="6">
                     <!-- 左边的列  渲染二级权限-->
                     <el-col :span="6">
                       <el-tag type="success">
@@ -52,9 +52,9 @@
                   </el-row>
                 </el-col>
               </el-row>
-              <pre>
+              <!-- <pre>
               {{scope.row}}
-              </pre>
+              </pre> -->
             </template>
           </el-table-column>
           <!-- 索引列 -->
@@ -112,5 +112,10 @@ export default {
 }
 .bdbottom {
   border-bottom: 1px solid #eee;
+}
+/*  设置一级权限上的纵向居中对齐！ */
+.vcenter {
+  display: flex;
+  align-items: center;
 }
 </style>
