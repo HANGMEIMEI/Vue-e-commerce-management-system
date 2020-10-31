@@ -79,7 +79,7 @@
     <el-dialog
     title="分配权限"
     :visible.sync="setRightDialogVisible"
-    width="50%">
+    width="50%" @close="setRightDialogClosed">
     <!-- 分配权限的树型控件 -->
     <el-tree :data="rightList" :props="treeProps" show-checkbox node-key="id" default-expand-all :default-checked-keys="defKeys" ref="treeRef"></el-tree>
     <!-- 分配权限的树型控件 -->
@@ -172,6 +172,10 @@ export default {
       node.children.forEach(item =>
         this.getLeafKeys(item, arr)
       )
+    },
+    // 监听对话框的关闭事件
+    setRightDialogClosed () {
+      this.defKeys = []
     }
   }
 }
