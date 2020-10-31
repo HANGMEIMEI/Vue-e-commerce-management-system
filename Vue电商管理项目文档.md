@@ -3078,11 +3078,34 @@ export default {}
 
 
 
-##### 008 完成分配角色的业务逻辑！ - ––- 分配权限对话框的弹出 - - -并且把所有权限以树形结构加载出来!
+##### 008 完成分配角色按钮的业务逻辑！ - ––- 分配权限对话框的弹出 - - -并且把所有权限以树形结构加载出来! 并且对属性控件进行优化！
 
  
 
+要用到树形控件哈！要按需导入进组件中！ 树形控件放在分配权限的模态框中， 请看下面的代码：
 
+
+
+```js
+ <!-- 分配权限的对话框 -->
+    <el-dialog
+    title="分配权限"
+    :visible.sync="setRightDialogVisible"
+    width="50%">
+    <!-- 分配权限的树型控件 -->
+    <el-tree :data="rightList" :props="treeProps" show-checkbox node-key="id" default-expand-all :default-checked-keys="defKeys" ref="treeRef"></el-tree>
+    <!-- 分配权限的树型控件 -->
+    <span slot="footer" class="dialog-footer">
+      <el-button @click="setRightDialogVisible = false">取 消</el-button>
+      <el-button type="primary" @click="setRightDialogVisible = false">确 定</el-button>
+    </span>
+  </el-dialog>
+    <!-- 分配权限的对话框 -->
+```
+
+
+
+![1604136155493](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1604136155493.png)
 
 
 
