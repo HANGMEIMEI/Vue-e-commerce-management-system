@@ -67,7 +67,7 @@
               <template slot-scope="scope">
                   <el-button size="mini" type="primary" icon="el-icon-edit">编辑</el-button>
                   <el-button size="mini" type="danger" icon="el-icon-delete">删除</el-button>
-                  <el-button size="mini" type="warning" icon="el-icon-setting" @click="showSetRightDialog">分配权限</el-button>
+                  <el-button size="mini" type="warning" icon="el-icon-setting" @click="showSetRightDialog(scope.row)">分配权限</el-button>
               </template>
           </el-table-column>
       </el-table>
@@ -150,8 +150,7 @@ export default {
       role.children = res.data
     },
     // 分配权限的业务逻辑！[展示分配权限的对话框!]
-    async showSetRightDialog () {
-      this.setRightDialogVisible = true
+    async showSetRightDialog (role) {
       // 获取所有权限的数据！
       const { data: res } = await this.$http.get('rights/tree')
       if (res.meta.status !== 200) {
@@ -160,6 +159,19 @@ export default {
       // 把获取到的权限数据保存到 data 中！
       this.rightList = res.data
       console.log(this.rightList)
+      // 递归获取三级节点的id
+      this.getLeafKeys(role, this.defKeys)
+      this.setRightDialogVisible = true
+    },
+    // 通过递归的形式， 获取角色下所有三级权限的id， 并保存到 defKeys 数组中！
+    getLeafKeys (node, arr) {
+      // 如果当前 node 节点 不包含 children 属性， 则是三级节点
+      if (!node.children) {
+        return arr.push(node.id)
+      }
+      node.children.forEach(item =>
+        this.getLeafKeys(item, arr)
+      )
     }
   }
 }
