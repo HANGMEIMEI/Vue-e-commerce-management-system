@@ -1,4 +1,4 @@
-# Vue电商管理项目的搭建过程：
+#  Vue电商管理项目的搭建过程：
 
 
 
@@ -20,13 +20,25 @@
 
 # 项目的目录：
 
+项目概述
+项目初始化
+登录/退出功能
+主页布局
+用户管理模块
+权限管理模块
+分类管理模块
+参数管理模块
+商品管理模块
+订单管理模块
+数据统计模块
+
 ## ◆项目概述
 
 ### 1.1 电商项目的基本业务的概述
 
 #### 	根据不同的业务场景，电商系统一般都提供了PC端、移动APP、移动web、微信小程序等多种终端访问方式！
 
-![1601043262272](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1601043262272.png)
+![image-20210225160754521](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\image-20210225160754521.png)
 
 ### 1.2电商管理系统的功能：
 
@@ -44,9 +56,7 @@
 
 
 
-
-
-![1601043421587](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1601043421587.png)
+![image-20210225161013662](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\image-20210225161013662.png)
 
 
 
@@ -84,11 +94,11 @@
 
 ##### 2 Express
 
-##### 3 Jwt
+##### 3 Jwt(状态保持工具)
 
 ##### 4 Mysql
 
-##### 5 Sequelize
+##### 5 Sequelize（操作数据库的框架！）
 
 
 
@@ -99,6 +109,14 @@
 
 
 ### 2.1前端项目初始化步骤
+
+@安装vue脚手架
+②通过vue脚手架创建项目
+③配置vue路由
+④配置Element-U1组件库
+⑤配置axios库
+⑥初始化git远程仓库
+⑦将本地项目托管到Github或码云中
 
 #### 1 安装Vue脚手架
 
@@ -182,55 +200,43 @@ npm uninstall -g @vue/cli
 
 浏览器弹出：
 
-![1601913908287](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1601913908287.png)
+![1601913908287](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1601913908287.png)
 
 第二步：
 
-![1601913947035](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1601913947035.png)
+![1601913947035](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1601913947035.png)
 
 第三步：
 
-![1601914044731](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1601914044731.png)
-
-
+![1601914044731](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1601914044731.png)
 
 第四步：
 
-![1601914069116](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1601914069116.png)
+![1601914069116](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1601914069116.png)
 
 第五步：
 
-![1601914265146](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1601914265146.png)
 
 
+![1601914265146](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1601914265146.png)
 
 第六步：
 
-![1601914492511](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1601914492511.png)
+![1601914492511](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1601914492511.png)
 
+第七步：![1601914601347](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1601914601347.png)
 
-
-第七步：
-
-![1601914601347](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1601914601347.png)
-
-第八步：
-
-![1601914727520](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1601914727520.png)
+第八步：![1601914727520](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1601914727520.png)
 
 第九步：
 
-![1601914847713](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1601914847713.png)
 
 
+![1601914847713](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1601914847713.png)
 
 第十步：搞定！
 
-
-
-![1601915080683](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1601915080683.png)
-
-
+![1601915080683](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1601915080683.png)
 
 
 
@@ -242,31 +248,31 @@ npm uninstall -g @vue/cli
 
 #### 4 配置 Element-UI 组件库
 
-![1602323679747](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602323679747.png)
+
+
+#### ![1602323679747](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1602323679747.png)
 
 第二步：
 
-![1602323726159](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602323726159.png)
-
-
+![1602323726159](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1602323726159.png)
 
 第三步：
 
-![1602323814325](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602323814325.png)
+![1602323814325](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1602323814325.png)
 
 #### 5 配置 axios 库
 
 第一步：
 
-![1602323887645](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602323887645.png)
 
 
+![1602323887645](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1602323887645.png)
 
 第二步：
 
-![1602323972891](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602323972891.png)
 
 
+![1602323972891](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1602323972891.png)
 
 
 
@@ -425,6 +431,12 @@ npm uninstall -g @vue/cli
 
 ### 2.2 后台项目的环境安装配置：
 
+①安装MySQL数据库
+②安装Node.js环境
+③配置项目相关信息
+④启动项目
+⑤使用Postman测试后台项目接口是否正常
+
 #### 1 安装Mysql 数据库
 
 ​	用PHPstudy这个软件来使用MySQL数据库，因为它集成了MySQL和Apache服务器！而我们只需要用到MySQL，所以我们可以停掉Apache！
@@ -445,7 +457,7 @@ npm uninstall -g @vue/cli
 
 用PHPstudy来执行这个脚本！：
 
-![1602329945614](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602329945614.png)
+![1602329945614](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\160232994 5614.png)
 
 
 
@@ -513,7 +525,7 @@ token是用来进行登陆状态保存的！就相当于node里面的session！
 
 我们可以通过token来验证这个人有没有登录！
 
-
+### token用来进行登陆状态保存！
 
 ## 3 ◆登录/退出功能
 
@@ -533,21 +545,21 @@ token是用来进行登陆状态保存的！就相当于node里面的session！
 ​	
 
 - ·http是无状态的
-  ·通过cookie在客户端记录状态
-  ·通过session在服务器端记录状态
-  ·通过token方式维持状态
+- ·通过cookie在客户端记录状态
+- ·通过session在服务器端记录状态
+- ·通过token方式维持状态
 
 
 
 
 
-如果前端和后台接口之间不存在跨域的问题推荐大家使用cookie和session来记录登录状态， 反之则需要token来维持登录状态
+如果前端和【服务器之间】后台接口之间不存在跨域的问题推荐大家使用cookie和session来记录登录状态， 反之则需要token来维持登录状态
 
 
 
 ### 3.2 登录 –- token原理分析
 
-![1602385194244](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602385194244.png)
+![image-20210305155545991](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\image-20210305155545991.png)
 
 ​	
 
@@ -603,17 +615,20 @@ token是用来进行登陆状态保存的！就相当于node里面的session！
 
 
 
-```
+```bash
+ # 创建并且切换分支
  git checkout -b login
+ # 查看分支
+ git branch
 ```
 
 
 
 #### 2 删除不必要的组件
 
-​	![1602390122780](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602390122780.png)
 
 
+![1602390122780](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1602390122780.png)
 
 由于我这个版本是2.x的版本，所以和3.x的结构有所不同，但是是大同小异的，总之，用的上的就留下，前端页面肯定是要清空的
 
@@ -714,7 +729,7 @@ vue
 
 ```
 
-![1602395920554](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602395920554.png)
+![1602395920554](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1602395920554.png)
 
 最后在地址中加入login即可看到上图所示的内容！
 
@@ -791,13 +806,13 @@ export default {}
 
 ![1602475242585](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602475242585.png)
 
-
+记住安装依赖less和less-loader!
 
 
 
 ##### 绘制登录盒子：
 
-![1602475796044](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602475796044.png)
+![image-20210308172818173](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\image-20210308172818173.png)
 
 在登录组件中绘制：
 
@@ -848,7 +863,7 @@ export default {}
 
 ##### 绘制顶部默认的头像区域：
 
-![1602501317604](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602501317604.png)
+![1602501317604](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\1602501317604.png)
 
 
 
@@ -1584,6 +1599,19 @@ import Home from '../components/Home.vue'
 
 ![1602667290024](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602667290024.png)
 
+```js
+// 添加路由导航守卫--- 如果用户没有登录，但是直接通过URL访问特定页面，需要重新导航到登录页面。
+VueRouter.beforeEach((to, form, next) => {
+  // 如果用户访问的是登录页面，直接放行
+  if (to.path === '/login') return next()
+  // 从sessionStorage 中获取到保存的 token 值
+  const tokenStr = window.sessionStorage.getItem('token')
+  // 没有token，强制跳转登录页
+  if (!tokenStr) return next('/login')
+  next()
+})
+```
+
 为路由对象调用一个beforeEach函数
 
 上面的beforeEach就是导航守卫 接收一个回调函数 接收三个形参 
@@ -1685,8 +1713,14 @@ router.beforeEach((to, from, next) => {
 
 ![1602672217339](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602672217339.png)
 
-```
+```js
+ signOut () {
+      // 清空token
+      window.sessionStorage.clear()
 
+      // 跳转到登录页
+      this.$router.push('/login')
+    }
 ```
 
 
@@ -1805,11 +1839,19 @@ git merge login
 
 最后，再推送到远程的仓库
 
-```
+```bash
 git push vue-shop2 develop
 ```
 
 搞定！
+
+```
+shop (login)
+$ git push -u origin login
+
+```
+
+> 码云中的操作!
 
 ## 4、◆用户管理模块
 
@@ -1817,7 +1859,11 @@ git push vue-shop2 develop
 
 ### 4.1 整体布局
 
-![1602680207339](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602680207339.png)
+![image-20210312143916441](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\image-20210312143916441.png)
+
+```bash
+git checkout -b home
+```
 
 整体布局：先上下划分，再左右划分。
 
@@ -2010,7 +2056,7 @@ header区域的主要的内容：
 
 ![1602736045481](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602736045481.png)
 
-
+![image-20210312152802488](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\image-20210312152802488.png)
 
 ![1602736347609](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602736347609.png)
 
@@ -2115,7 +2161,7 @@ Vue.prototype.$message = Message
 
 ![1602738815693](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602738815693.png)
 
-
+![image-20210312160021010](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\image-20210312160021010.png)
 
 #### 设置axios的请求拦截器
 
@@ -2393,6 +2439,18 @@ res的返回值来看
 
 
 
+#### 把左侧菜单改造为路由链接！
+
+重点是在二级菜单的地方进行修改! 不要改错地方了!
+
+
+
+#### 用户列表的开发！
+
+##### 点击用户列表的链接显示用户列表的组件！
+
+
+
 #### 06 点击不同的二级菜单可以在右侧主体区域切换显示不同的组件页面
 
 
@@ -2453,13 +2511,15 @@ router=“true”
 
 ![1602837395815](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602837395815.png)
 
+![image-20210414153311258](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\image-20210414153311258.png)
+
 
 
 第一步： 
 
 - 给二级事件都绑定一个单击事件，再单击事件中把咱们的path值存储起来！
 
-
+创建页面的时候再把他们都取出来!
 
 
 
@@ -2470,6 +2530,8 @@ router=“true”
 01 头部是一个面包屑的导航区！
 
 ![1602840223592](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602840223592.png)
+
+![image-20210414160153892](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\image-20210414160153892.png)
 
 同样的，下一步就是进行组件的按需导入！
 
@@ -2550,6 +2612,8 @@ export default {
 
 ![1602849473766](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602849473766.png)
 
+![image-20210414170329488](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\image-20210414170329488.png)
+
 
 
 当然，之后的组件的使用同样是需要按需导入的哈！
@@ -2595,6 +2659,8 @@ this.userlist = res.data.userlist
 
 ![1602851996020](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602851996020.png)
 
+![image-20210414172345739](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\image-20210414172345739.png)
+
 
 
 <u>为表格的父元素添加`stripe`属性可以创建带斑马纹的表格。它接受一个`Boolean`，默认为`false`，设置为`true`即为启用。</u>
@@ -2605,10 +2671,34 @@ this.userlist = res.data.userlist
 
 ![1602852725418](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602852725418.png)
 
+![image-20210414172433755](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\image-20210414172433755.png)
+
 ```html
             <el-table-column label="#" type="index"></el-table-column>
 
 ```
+
+
+
+#### 14 通过作用域插槽的形式自定义操作列表渲染
+
+在进行分配角色的时候还需要按需导入一个插件，别忘了哈！
+
+
+
+![1602856089025](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602856089025.png)
+
+![image-20210414175051205](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\image-20210414175051205.png)
+
+
+
+| enterable | 鼠标是否可进入到 tooltip 中 | Boolean | —    | true |
+| --------- | --------------------------- | ------- | ---- | ---- |
+|           |                             |         |      |      |
+
+
+
+
 
 
 
@@ -2627,18 +2717,6 @@ this.userlist = res.data.userlist
 完成布置之后可以删掉prop这个属性，不会影响页面的布局！
 
 
-
-#### 14 通过作用域插槽的形式自定义操作列表渲染
-
-在进行分配角色的时候还需要按需导入一个插件，别忘了哈！
-
-
-
-![1602856089025](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1602856089025.png)
-
-| enterable | 鼠标是否可进入到 tooltip 中 | Boolean | —    | true |
-| --------- | --------------------------- | ------- | ---- | ---- |
-|           |                             |         |      |      |
 
 
 
@@ -2672,6 +2750,16 @@ this.userlist = res.data.userlist
 
 **![1603019226266](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603019226266.png)**
 
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210415123015544-1344763100.png)
+
+
+
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210415123104238-140440083.png)
+
+
+
+
+
 请求方法：put请求！
 
 
@@ -2702,11 +2790,17 @@ this.userlist = res.data.userlist
 
 ![1603098144848](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603098144848.png)
 
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210415132633290-2033691068.png)
+
+
+
 
 
 清空文本框重置所有的数据！
 
 ![1603098246402](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603098246402.png)
+
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210415132747029-601165921.png)
 
 ```html
  <el-input placeholder="请输入内容" v-model="queryInfo.query" clearable @clear="getUserList">-
@@ -2734,6 +2828,10 @@ this.userlist = res.data.userlist
 #### 19 实现在添加用户的对话框中渲染一个添加用户的表单
 
 ![1603106334425](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603106334425.png)
+
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210415132847715-380250542.png)
+
+
 
 
 
@@ -2848,7 +2946,19 @@ this.userlist = res.data.userlist
 
 
 
+
+
+
+
 #### 28、实现提交修改表单之前预验证的操作
+
+![](D:\myProfessionalProfiles\QDSJK\Vue_e-commerce_project_management_system\vue_shop_ecms\Vue电商管理项目文档.assets\2031306-20210416150419390-733649844.png)
+
+莫名奇妙出现的问题!
+
+出现上面的原因是我写代码时没有按照格式写！贪便宜吧!
+
+
 
 
 
@@ -2980,7 +3090,7 @@ import Authority from '../components/authority/Authority.vue'
 
 #### 2 绘制权限列表页面的基本的布局
 
-
+卡片视图中放了一个table数据表格！
 
 #### 3 请求权限列表的数据获取
 
@@ -2992,6 +3102,10 @@ import Authority from '../components/authority/Authority.vue'
 
 #### 4 获取权限列表数据-渲染一个table表格！【权限列表表格的渲染】
 
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210417155232586-875530998.png)
+
+
+
 
 
 ### 2.1权限管理业务分析
@@ -2999,6 +3113,8 @@ import Authority from '../components/authority/Authority.vue'
 通过权限管理模块控制不同的用户可以进行哪些操作，具体可以通过角色的方式进行控制，即每个用户分配一个特定的角色，角色包括不同的功能权限。
 
 ![1603369951079](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1603369951079.png)
+
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210417155322449-2132950905.png)
 
 
 
@@ -3036,11 +3152,15 @@ export default {}
 
 #### 02 实现角色列表的基础布局-获取角色列表的相关数据！
 
-
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210418141417058-1484261911.png)
 
 
 
 #### 03 渲染角色列表中的table数据！
+
+
+
+
 
 
 
@@ -3064,7 +3184,11 @@ export default {}
 
 
 
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210418150414351-888425727.png)
+
 ##### 005 对权限数据的结构进一步的美化
+
+
 
 
 
@@ -3072,9 +3196,15 @@ export default {}
 
 
 
+
+
 ##### 007 继续完成删除的业务逻辑！
 
 ###### 0001为二级权限和一级权限完成删除的操作！
+
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210418163459101-556437795.png)
+
+
 
 
 
@@ -3132,7 +3262,7 @@ export default {}
 
 
 
-
+##### 013 完成用户列表里面的分配角色的功能！
 
 
 
@@ -3144,11 +3274,111 @@ export default {}
 
 ## ◆分类管理模块
 
+### 3、分类管理
+
+#### 3.1 商品分类概述
+
+商品分类用于在购物时，快速找到所要购买的商品，可以通过电商平台主页直观的看到。
+
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210419115441664-1198834567.png)
+
+#### 3.2 绘制商品分类页面的基本结构
+
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210419125942563-1924854234.png)
+
+
+
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210419142202263-875490059.png)
+
+
+
+通过自定义模板的数据将后三列数据渲染出来！ 
+
+ ![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210419143331068-1065392558.png)
+
+
+
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210419160000795-160843669.png)
+
+
+
+##### 分页功能的实现
+
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210419155931914-361891220.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## ◆参数管理模块
+
+
+
+### 4.1参数管理概述
+
+商品参数用于<mark>显示商品的固定的特征信息</mark>，可以通过电商平台商品详情页面直观的看到。
+
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210420135220503-1649186619.png)
+
+
+
+
+
+#### 商品列表页面
+
+![](https://img2020.cnblogs.com/blog/2031306/202104/2031306-20210421153911078-1187206575.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## ◆商品管理模块
 
+
+
+商品分类单文件！
+
+
+
 ## ◆订单管理模块
+
+
+
+渲染订单的列表数据！
+
+
 
 ## ◆数据统计模块
 
@@ -3158,7 +3388,317 @@ export default {}
 
 
 
+# Vue全家桶-项目优化上线
 
+
+
+## 能够优化Vue项目
+
+### 项目优化
+
+#### 1.1项目优化策略
+
+##### 1，生成打包报告
+
+打包时，为了直观地发现项目中存在的问题，可以在打包时生成报告。生成报告的方式有两种：
+
+1. 通过命令行参数的形式生成报告
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704172328614-54628718.png)
+
+2. 通过可视化的U面板直接查看报告（推荐）
+
+在可视化的U面板中，通过控制台和分析面板，可以方便地看到项目中所存在的问题。
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704172538161-2137021881.png)
+
+##### 2·通过vue.config.js修改webpack的默认配置
+
+通过vue-cli 3.0工具生成的项目，默认隐藏了所有webpack的配置项，目的是为了屏蔽项目的配置过程，让程序员把工作的重心，放到具体功能和业务逻辑的实现上。
+
+如果程序员有修改webpack默认配置的需求，可以在项目根目录中，按需创建vue.config.js这个配置文件，从而对项目的打包发布过程做自定义的配置（具体配置参考https://cli.vuejs.org/zh/config/#vue-config-is）
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704172914495-2072729026.png)
+
+##### 3，为开发模式与发布模式指定不同的打包入口
+
+默认情况下，Vue项目的**开发模式**与**发布模式**，共用同一个打包的入口文件（即src/mainjs）。为了将项目的开发过程与发布过程分离，我们可以为两种模式，各自指定打包的入口文件，即：
+①开发模式的入口文件为src/main-dev.js
+②发布模式的入口文件为src/main-prod.js
+
+##### 4.configureWebpack和chainWebpack
+
+在vue.config.js导出的配置对象中，新增configureWebpack或chainWebpack节点，来自定义webpack的打包配置。
+
+在这里，configureWebpack和chainWebpack的作用相同，唯一的区别就是它们修改webpack配置的方式不同：
+
+- @chainWebpack通过链式编程的形式，来修改默认的webpack配置
+- @configureWebpack通过操作对象的形式，来修改默认的webpack配置
+
+两者具体的使用差异，可参考如下网址：【网址无效！】https://cli.vueis.org/zh/quide/webpack.html#webpack-%E7%9B%B8%E5%85%B3
+
+##### 5，通过chainWebpack自定义打包入口
+
+代码示例如下：
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704173654832-638647112.png)
+
+```js
+module.exports = {
+  // body
+  chainWebpack: config => {
+    config.when(process.env.NODE_ENV === 'production', config => {
+      config.entry('app').clear().add('./src/main-prod.js')
+    }
+    )
+
+    config.when(process.env.NODE_ENV === 'development', config => {
+      config.entry('app').clear().add('./src/main-dev.js')
+    })
+  }
+}
+
+```
+
+##### 6·通过externals加载外部CDN资源
+
+默认情况下，通过import语法导入的第三方依赖包，最终会被打包合并到同一个文件中，从而导致打包成功后，单文件体积过大的问题。
+
+为了解决上述问题，可以通过webpack的externals节点，来配置并加载外部的CDN资源。凡是声明在externals中的第三方依赖包，都不会被打包。
+
+具体配置代码如下：
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704175702893-1046309366.png)
+
+```js
+
+      config.set('externals', {
+        Vue: 'Vue',
+        'vue-router': 'VueRouter',
+        axios: 'axios',
+        lodash: '_',
+        echarts: 'echarts',
+        nprogress: 'NProgress',
+        'vue-quill-editor': 'VueQuillEditor'
+      })
+```
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704180137035-274263002.png)
+
+同时，需要在public/index.html文件的头部，添加如下的CDN资源引用：
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704180240960-246539106.png)
+
+```js
+    <!-- nprogress 的样式表文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+    <!-- 富文本编辑器 的样式表文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/quill/1.3.4/quill.core.min.css" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/quill/1.3.4/quill.snow.min.css" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/quill/1.3.4/quill.bubble.min.css" />
+    <!-- element-ui 的样式表文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.8.2/theme-chalk/index.css" />
+```
+
+同时，需要在public/index.html文件的头部，添加如下的CDN资源引用：
+
+##### 7，通过CDN优化ElementUl的打包
+
+具体操作流程如下：
+
+1. 在main-prod.js中，注释掉element-ui按需加载的代码
+
+2. 在index.html的笑部区域中，通过CDN加载element-ui的js和css样式
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704190937847-1241240933.png)
+
+```js
+<!-- element-ui 的样式表文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.8.2/theme-chalk/index.css" />
+        
+              <!-- element-ui 的 js 文件 -->
+      <script src="https://cdn.staticfile.org/element-ui/2.8.2/index.js"></script>
+```
+
+##### 8、首页内容定制
+
+不同的打包环境下，首页内容可能会有所不同。我们可以通过插件的方式进行定制，插件配置如下：
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704194509869-2081590515.png)
+
+在public/index.html首页中，可以根据isProd的值，来决定如何渲染页面结构：
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704195021384-2104172106.png)
+
+```html
+    <title><%= htmlWebpackPlugin.options.isProd ? '' : 'dev - ' %>电商后台管理系统</title>
+
+     <% if(htmlWebpackPlugin.options.isProd){ %>
+
+      <!-- nprogress 的样式表文件 -->
+      <link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+      <!-- 富文本编辑器 的样式表文件 -->
+      <link rel="stylesheet" href="https://cdn.staticfile.org/quill/1.3.4/quill.core.min.css" />
+      <link rel="stylesheet" href="https://cdn.staticfile.org/quill/1.3.4/quill.snow.min.css" />
+      <link rel="stylesheet" href="https://cdn.staticfile.org/quill/1.3.4/quill.bubble.min.css" />
+      <!-- element-ui 的样式表文件 -->
+      <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.8.2/theme-chalk/index.css" />
+
+      <script src="https://cdn.staticfile.org/vue/2.5.22/vue.min.js"></script>
+      <script src="https://cdn.staticfile.org/vue-router/3.0.1/vue-router.min.js"></script>
+      <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+      <script src="https://cdn.staticfile.org/lodash.js/4.17.11/lodash.min.js"></script>
+      <script src="https://cdn.staticfile.org/echarts/4.1.0/echarts.min.js"></script>
+      <script src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"></script>
+      <!-- element-ui 的样式表文件 -->
+      <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.8.2/theme-chalk/index.css" />
+
+      <!-- 富文本编辑器的 js 文件 -->
+      <script src="https://cdn.staticfile.org/quill/1.3.4/quill.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.4/dist/vue-quill-editor.js"></script>
+
+      <!-- element-ui 的 js 文件 -->
+      <script src="https://cdn.staticfile.org/element-ui/2.8.2/index.js"></script>
+
+      <% } %>
+```
+
+
+
+##### 9、路由懒加载
+
+当打包构建项目时，Javascript包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更加高效了。
+
+具体需要3步：
+①1. 安装@babel/plugin-syntax-dynamic-import包。
+②2 . 在babel.config.js配置文件中声明该插件。
+
+3. 将路由改为按需加载的形式，示例代码如下：
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704203614806-1386470475.png)
+
+
+
+关于路由懒加载的详细文档，可参考如下链接：https://router.vuejs.org/zh/guide/advanced/lazy-loading.html
+
+
+
+
+
+
+
+【为项目添加进度条的效果！】
+
+
+
+### 2、项目上线
+
+#### 2.1项目上线相关配置
+
+##### 
+
+创建node项目，并安装express，通过express快速创建web服务器，将vue打包生成的dist文件夹，托管为静态资源即可，关键代码如下：
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704205912022-1975865563.png)
+
+```js
+const express = require('express')
+// 创建 web 服务器
+const app = express()
+
+// 托管静态资源
+app.use(express.static('./dist'))
+
+// 启动 web 服务器
+app.listen(90, () => {
+    console.log('web server running at http://127.0.0.1')
+})
+```
+
+
+
+
+
+
+
+##### 2，开启gzip配置。
+
+使用gzip可以减小文件体积，使传输速度更快。
+
+@可以通过服务器端使用Express做gzip压缩。其配置如下：
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704212931048-198030667.png)
+
+```js
+const express = require('express')
+const compression = require('compression')
+
+// 创建 web 服务器
+const app = express()
+
+// 一定要把这一行代码，写到静态资源托管之前
+app.use(compression())
+// 托管静态资源
+app.use(express.static('./dist'))
+
+// 启动 web 服务器
+app.listen(90, () => {
+    console.log('web server running at http://127.0.0.1')
+})
+```
+
+
+
+
+
+
+
+
+
+##### 3，配置https服务。
+
+为什么要启用HTTPS服务？
+
+- 传统的HTTP协议传输的数据都是明文，不安全
+
+- 采用HTTPS协议对传输的数据进行了加密处理，可以防止数据被中间人窃取，使用更安全s
+
+申请SSL证书（https://freessl.org）
+
+
+
+①进入https://freessl.cn/     <https://freessl.cn/>官网，输入要申请的域名并选择品牌。
+②输入自己的邮箱并选择相关选项。
+③验证DNS（在名管理后台添加TXT记录）
+④验证通过之后，下载SSL证书（full chain.pem公；private.key私钥）
+
+
+
+在后台项目中导入证书
+
+![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704215720044-1072944918.png)
+
+
+
+
+
+
+
+##### 4，使用pm2管理应用。
+
+- 在服务器中安装pm2：`npm i pm2 -g`
+
+- 启动项目：pm2 start 脚本 --name 自定义名称 `pm2 start app.js --name web_vueshop`
+
+- 查看运行项目：`pm2 ls`
+- 重启项目：pm2 restart 自定义名称`pm2 restart default`
+- ![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704223225807-1928284637.png)
+- 停止项目：pm2 stop 自定义名称 `pm2 stop default`
+- ![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704223128556-14753256.png)
+- 删除项目：pm2 delete 自定义名称 `pm2 delete web_vueshop`
+- ![](https://img2020.cnblogs.com/blog/2031306/202107/2031306-20210704224153075-1147690212.png)
+
+## 能够部署Vue项目
 
 
 

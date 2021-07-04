@@ -47,7 +47,7 @@
                    <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeUserById(scope.row.id)">删除</el-button>
                    <!-- 分配角色按钮 -->
                     <el-tooltip effect="dark" content="分配角色" placement="top" :enterable="false">
-                    <el-button type="warning" icon="el-icon-setting" size="mini">渲染</el-button>
+                    <el-button type="warning" icon="el-icon-setting" size="mini" @click="setRole">渲染</el-button>
                     </el-tooltip>
                </template>
            </el-table-column>
@@ -131,6 +131,19 @@
       </span>
     </el-dialog>
     <!-- 修改用户的对话框 -->
+
+    <!-- 分配角色的对话框 -->
+      <el-dialog
+        title="分配角色"
+        :visible.sync="setRoleDialogVisible"
+        width="50%">
+        <span>这是一段信息</span>
+        <span slot="footer" class="dialog-footer">
+          <el-button @click="setRoleDialogVisible = false">取 消</el-button>
+          <el-button type="primary" @click="setRoleDialogVisible = false">确 定</el-button>
+        </span>
+      </el-dialog>
+    <!-- 分配角色的对话框 -->
   </div>
 </template>
 
@@ -208,7 +221,9 @@ export default {
         mobile: [
           { required: true, message: '请输入修改后的手机号', trigger: 'blur' }, { validator: checkMobile, trigger: 'blur' }
         ]
-      }
+      },
+      // 控制显示分配角色对话框 的 显示与隐藏
+      setRoleDialogVisible: false
     }
   },
   // 生命周期函数
@@ -336,6 +351,10 @@ export default {
       // 成功之后， 刷新数据列表！
       this.getUserList()
       return this.$message.success('删除用户信息成功！')
+    },
+    // 展示分配角色的对话框
+    setRole () {
+      this.setRoleDialogVisible = true
     }
   }
 }

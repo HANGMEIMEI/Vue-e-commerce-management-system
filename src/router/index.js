@@ -14,10 +14,15 @@ import Authority from '../components/authority/Authority.vue'
 import Roles from '../components/authority/Roles.vue'
 
 Vue.use(VueRouter)
+const VueRouterPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push (to) {
+  return VueRouterPush.call(this, to).catch(err => err)
+}
 
 // 路由规则是由path来指定咱们路径 当用户访问/login的时候我们通过component这个属性指定要展示的组件
 const routes = [
   { path: '/', redirect: '/login' },
+  // { path: '/login', component: () => { import('@/components/Login') } },
   { path: '/login', component: Login },
   // 加入新的主页路由规则
   // path下面的路径和编程导航的路径必须是一样的
